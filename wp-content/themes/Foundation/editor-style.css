@@ -1,0 +1,432 @@
+/*
+Theme Name: Foundation
+Theme URI: http://fiascodesign.co.uk
+Description: A bespoke theme for Technology Will Save Us
+Version: 1.0
+Author: Thomas Morris
+*/
+
+/* Global Type */
+
+img { 
+	max-width:100%;
+	height:auto;
+	}
+a {
+	color:inherit;
+}
+a:hover { 
+	text-decoration:none; 
+}
+li {
+	list-style:none;
+	display:inline;
+	}
+ul {
+	margin-left:0;
+	}
+
+/* Typography */
+
+body {
+	font-size:14px;
+	line-height:1.42857143;
+	color:rgb(95,122,126);
+	font-weight:400;
+	font-family: 'museo-sans', Helvetica, sans-serif;
+	max-width:600px;
+	margin:0 auto;
+	}
+a {
+	color:inherit;
+}
+a:hover { 
+	text-decoration:none;
+	color:#777;
+}
+li {
+	list-style:none;
+	display:inline;
+	}
+ul {
+	margin-left:0;
+	}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight:400;
+}
+
+/* Typography */
+
+b,
+.bold {
+	font-family:'futura-pt', 'Futura', Helvetica, sans-serif; 
+	font-weight:700;
+	}
+
+.menu-footer,
+.content blockquote,
+.wp-caption .wp-caption-text,
+h1, h2, h3, h4, h5, h6 {
+	font-family:"jubilat", Georgia, serif;
+	line-height:1.3em;
+}
+
+.tags,
+.small-caps,
+.wpp-excerpt,
+.comment-author .fn,
+.widget_nav_menu ul {
+	font-family: 'museo-sans', Helvetica, sans-serif;
+}
+.widget div,
+.widget ul,
+.widget_nav_menu ul {
+	font-weight:500;
+}
+.tab,
+.widget_nav_menu,
+.reply,
+.sub-head,
+.combo-filters,
+.menu-footer .sub-head,
+.comment-author .fn {
+	font-weight:700;
+}
+.filter,
+.widget_nav_menu ul,
+.small-caps,
+.popup h3,
+h2.serif {
+	letter-spacing:0.05em;
+}
+.tab,
+.widget,
+.widget_nav_menu,
+.widget_nav_menu ul,
+.small-caps,
+.divide,
+.reply,
+.sub-head,
+.caps {
+	text-transform:uppercase;
+}
+
+.widget,
+.comment-meta,
+.widget_nav_menu,
+#commentform input[type="submit"],
+.divide,
+.reply,
+.social a,
+.menu-main,
+.sub-head,
+.title .sub-head,
+.comment-author .fn {
+	font-family:'futura-pt', 'Futura', Helvetica, sans-serif; 
+	letter-spacing:1px;
+	}
+
+.widget,
+.social a,
+.sub-head,
+.title .sub-head {
+	letter-spacing:0.25em;
+}
+
+.tabs,
+.widget_nav_menu ul,
+.small-caps {
+	letter-spacing: 0.2em;
+}
+
+.cta,
+.tab,
+.tags,
+.sans,
+.nav a,
+.combo-filters {
+	font-family:'futura-pt', 'Futura', Helvetica, sans-serif;
+}
+
+.caps {
+	text-transform: capitalize;
+}
+
+.underline {
+	border-bottom:1px solid #eee;
+	padding-bottom:5px;
+}
+
+.center {
+	text-align:center;
+}
+.widget div,
+.widget ul,
+.widget_nav_menu ul,
+.related .small-caps,
+.grey {
+	color:#777;
+}
+
+.white h1,
+.white h2,
+.white h3,
+.white h4,
+.white h5,
+.white p,
+.white a,
+.white p a {
+	color:#fff;
+}
+
+code {
+	display:block;
+	white-space:normal;
+}
+
+/* Margins */
+.notm {
+	margin-top:0;
+}
+.nobm {
+	margin-bottom:0;
+}
+.mt {
+	margin-top:10px;
+}
+.mb {
+	margin-bottom:10px;
+}
+.m5 {
+	margin:5px;
+	}
+.mt5 {
+	margin-top:5px;
+	}
+.mb5 {
+	margin-bottom:5px;
+	}
+.mt15 {
+	margin-top:15px;
+	}
+.mb15 {
+	margin-bottom:15px;
+	}
+
+/* Padding */
+.p10 {
+	padding:10px;
+}
+.p5 {
+	padding:5px;
+}
+.vp10 {
+	padding-top:10px;
+	padding-bottom:10px;
+	}
+.hp10 {
+	padding-left:10px;
+	padding-right:10px;
+	}
+.tp10 {
+	padding-top:10px;
+	}
+.bp10 {
+	padding-top:10px;
+	}
+.nop {
+	padding-left:0;
+	padding-right:0;
+}
+
+.right {
+	text-align:right;
+	}
+
+.fleft {
+	float:left;
+}
+
+.fright {
+	float:right;
+}
+
+.no-overflow {
+	overflow:hidden;
+	}
+.scroll {
+	overflow:auto;
+	}
+
+
+/*********************** Single ***/
+
+
+.content {
+	padding:0px;
+	}
+
+.content .title {
+	border-bottom:1px solid rgb(221,222,217);
+	line-height:1.2em;
+	padding-bottom:10px;
+	font-weight: 400;
+	margin-top:0;
+	margin-bottom:0.8em;
+}
+
+
+.content hr {
+	border-top:1px solid #000;
+	margin:1em 0;
+	}
+
+.gallery {
+	position:relative;
+	left:-5px;
+	width:102%;
+	margin:20px 0 !important;
+	}
+.gallery .gallery-item img {
+	border:0 !important;
+	}
+.gallery-item {
+	position:relative;
+	padding:5px;
+	margin:0 !important;
+	overflow:hidden;
+	}
+.gallery-item:hover .gallery-caption {
+	bottom: 0;
+	}
+.gallery-caption {
+	position:absolute;
+	color:#333;
+	bottom:-500px;
+	background:rgba(255,255,255,0.6);
+	padding:5px;
+	width:100%;
+	}
+
+.post-content .caps {
+	letter-spacing: 1px;
+	color:#777777;
+}
+.content {
+	color:rgb(95,122,126);
+	line-height:1.6em;
+	font-weight: 100;
+	letter-spacing:0.015em;
+}
+
+.content p {
+	margin:0.6em 0 1em 0;
+	}
+.content a {
+	color:rgb(95,122,126);
+	border-bottom:1px solid rgb(168,181,183);
+}
+.content a:hover {
+	color:inherit;
+	}
+.content a:active {
+	position:relative;
+	top:2px;
+	}
+
+.content .placeholder {
+	background:url(images/placeholder.gif) center center no-repeat #ececec;
+	width:100%;
+	height:300px;
+	}
+
+.content ol,
+.content ul {
+	display:block;
+	margin:0.2em 0;
+	padding-left:20px;
+	text-indent: 0;
+}
+.content li {
+	display:list-item;
+	margin:0.5em 0;
+	padding-left:1em;
+	font-size:0.9em;
+	list-style: decimal;
+}
+.content ul li {
+	list-style:disc;
+}
+.content img {
+	display:block;
+	height:auto;
+	margin:30px 0 20px 0;
+	background:url(images/placeholder.gif) center center no-repeat #f2f2f2;
+	max-width:100%;
+	width:100%;
+}
+
+.content img.alignnone {
+	width:auto;
+	height:auto;
+}
+
+.content .alignleft {
+	float:left;
+	margin-right:20px;
+}
+.content .alignright {
+	float:right;
+	margin-left:20px;
+}
+.content .aligncenter {
+	display:block;
+	margin-right:auto;
+	margin-left:auto;
+}
+blockquote {
+	border:0;
+	padding:0;
+	margin:1.4em 0 1.8em 0;
+}
+
+.wp-caption {
+	max-width:100%;
+	font-size:0.65em;
+	font-weight:600;
+	text-transform:uppercase;
+	letter-spacing: 0.1em;
+	color: rgb(208,173,43);
+}
+.wp-caption img {
+	margin: 10px 0 10px 0;
+	border-bottom:4px solid rgb(208,173,43);
+}
+.wp-caption .wp-caption-text:before {
+	content:'➤ ';
+	display:inline;
+}
+
+.post-edit-link {
+	color:rgb(221,222,217) !important;
+}
+
+.content .title .post-edit-link {
+	visibility: hidden;
+	font-size:0.5em;
+	border-bottom:0;
+}
+.content:hover .title .post-edit-link {
+	visibility: visible;
+}
+
+
+/*************** ANIMATION ***************/
+
+a, a:hover {
+	-webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+	}
