@@ -17,15 +17,6 @@ function my_login_logo() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
-
-// Remove Posts
-add_action( 'admin_menu', 'remove_admin_menus' );
-function remove_admin_menus() {
-    remove_menu_page( 'edit.php' );
-    remove_menu_page( 'edit-comments.php' );
-}
-
-
 // Admin Menu
 function add_menu_icons_styles(){
 ?>
@@ -55,28 +46,56 @@ function add_menu_icons_styles(){
 }
 add_action( 'admin_head', 'add_menu_icons_styles' );
 
+add_action( 'admin_menu', 'remove_admin_menus' );
+function remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
+
+//Rename Posts
+function revcon_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Matches';
+    $submenu['edit.php'][5][0] = 'Matches';
+    $submenu['edit.php'][10][0] = 'Add Match';
+    $submenu['edit.php'][16][0] = 'Match Tags';
+    echo '';
+}
+function revcon_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Matches';
+    $labels->singular_name = 'Match';
+    $labels->add_new = 'Add Match';
+    $labels->add_new_item = 'Add Match';
+    $labels->edit_item = 'Edit Match';
+    $labels->new_item = 'Matches';
+    $labels->view_item = 'View Match';
+    $labels->search_items = 'Search Matches';
+    $labels->not_found = 'No Matches found';
+    $labels->not_found_in_trash = 'No Matches found in Trash';
+    $labels->all_items = 'All Matches';
+    $labels->menu_name = 'Matches';
+    $labels->name_admin_bar = 'Matches';
+}
+add_action( 'admin_menu', 'revcon_change_post_label' );
+add_action( 'init', 'revcon_change_post_object' );
+
 // Register Post Types
 
 // Taxonomies
 
-//Footer
+// Footer
 add_filter( 'admin_footer_text', 'my_admin_footer_text' );
 function my_admin_footer_text( $default_text ) {
      return '<span id="footer-thankyou">Website created and crafted by <a href="http://fiascodesign.co.uk">Fiasco Design</a><span>';
 }
-
 
 // Editor Style
 function my_theme_add_editor_styles() {
     add_editor_style( 'editor-style.css' );
 }
 add_action( 'init', 'my_theme_add_editor_styles' );
-
-
-// Thumbnail Support
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'post-formats', array( 'gallery' ) );
-
 
 //jQuery Scripts
 if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
@@ -86,86 +105,27 @@ function my_jquery_enqueue() {
    wp_enqueue_script('jquery');
 }
 
-add_action('init', 'all_scripts');
+// add_action('init', 'all_scripts');
 function all_scripts() {
 	wp_enqueue_script('jquery-scripts', get_stylesheet_directory_uri().'/js/scripts.js','','',true);
 	wp_enqueue_script('jquery-init', get_stylesheet_directory_uri().'/js/init.js','','',true);
 }
-
-function theme_queue_js(){
-if ( (!is_admin()) && is_singular() && comments_open() && get_option('thread_comments') )
-  wp_enqueue_script( 'comment-reply' );
-}
-add_action('wp_print_scripts', 'theme_queue_js');
 
 
 // Menus
 register_nav_menu( 'primary', 'Main Menu' );
 
 
-/* IMAGES */
+// IMAGES
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'post-header', 675, 385, true );
-	add_image_size( 'slide', 940, 350, true );
+	// add_image_size( 'post-header', 675, 385, true );
 }
 
-
-// EXCERPTS
-function my_excerpt($excerpt_length = 20, $id = false, $echo = true) {
-		 
-	$text = '';
-   
-		  if($id) {
-				$the_post = & get_post( $my_id = $id );
-				$text = ($the_post->post_excerpt) ? $the_post->post_excerpt : $the_post->post_content;
-		  } else {
-				global $post;
-				$text = ($post->post_excerpt) ? $post->post_excerpt : get_the_content('');
-	}
-		 
-				$text = strip_shortcodes( $text );
-				$text = apply_filters('the_content', $text);
-				$text = str_replace(']]>', ']]&gt;', $text);
-		  $text = strip_tags($text);
-	   
-				$excerpt_more = ' ' . '...';
-				$words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-				if ( count($words) > $excerpt_length ) {
-						array_pop($words);
-						$text = implode(' ', $words);
-						$text = $text . $excerpt_more;
-				} else {
-						$text = implode(' ', $words);
-				}
-		if($echo)
-  echo apply_filters('the_content', $text);
-		else
-		return $text;
-}
- 
-function get_my_excerpt($excerpt_length = 20, $id = false, $echo = false) {
- return my_excerpt($excerpt_length, $id, $echo);
-}
-
+// Excerpt
 function new_excerpt_more( $more ) {
 	return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
-
-// Get Images From Content
-function catch_that_image() {
-  global $post, $posts;
-  $first_img = '';
-  ob_start();
-  ob_end_clean();
-  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-  $first_img = $matches[1][0];
-
-  if(empty($first_img)) {
-    $first_img = get_stylesheet_directory_uri()."/images/placeholder.gif";
-  }
-  return $first_img;
-}
 
 
 // Get Taxonomies
@@ -193,51 +153,6 @@ function get_my_terms(){
 	return implode('', $out );
 }
 
-// Comments Call Back
-function mytheme_comment($comment, $args, $depth) {
-		$GLOBALS['comment'] = $comment;
-		extract($args, EXTR_SKIP);
-
-		if ( 'div' == $args['style'] ) {
-			$tag = 'div';
-			$add_below = 'comment';
-		} else {
-			$tag = 'li';
-			$add_below = 'div-comment';
-		}
-?>
-		<<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-		<?php if ( 'div' != $args['style'] ) : ?>
-		<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-		<?php endif; ?>
-		<div class="comment-author vcard">
-		<div class="comment-meta commentmetadata">
-			<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-				<?php printf( __('%1$s'), get_comment_date('d / m / y')) ?>
-			</a><?php edit_comment_link(__('(Edit)'),'  ','' ); ?>
-			<span class="reply"><?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?></span>
-		</div>
-		<?php $id = get_comment(get_comment_ID())->user_id;
-		if(get_field('avatar','user_'. $id)) { 
-			$author_badge = get_field('avatar', 'user_'. $id );?>
-			<img width="20" height="20" src="<?php echo $author_badge['url']; ?>" alt="<?php echo $author_badge['alt']; ?>" />
-		<?php } else { echo get_avatar( $comment, $args['avatar_size'] ); } ?>
-		<?php printf(__('<cite class="fn">%s</cite> <span class="small-caps says">said...</span>'), get_comment_author_link()) ?>
-
-		</div>
-<?php if ($comment->comment_approved == '0') : ?>
-		<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-		<br />
-<?php endif; ?>
-
-		<?php comment_text() ?>
-		
-		<?php if ( 'div' != $args['style'] ) : ?>
-		</div>
-		<?php endif; ?>
-<?php
-        }
-
 // Hide Widgets
 function unregister_default_widgets() {
 	unregister_widget('WP_Widget_Calendar');
@@ -262,7 +177,6 @@ function remove_acf_menu()
     }
  
 }
- 
 add_action( 'admin_menu', 'remove_acf_menu', 999 );
 
 // Get Color

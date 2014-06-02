@@ -14,7 +14,7 @@
 <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.png?ver=04.04.14" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo bloginfo( 'stylesheet_url' ); ?>?ver=19.05.14" />
 
-<script type="text/javascript" src="//use.typekit.net/jvl7pcu.js"></script>
+<script type="text/javascript" src="//use.typekit.net/jtg2rpm.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <!--[if IE 7]>
@@ -29,38 +29,51 @@
 
 <body <?php body_class(); ?> >
 
-<div id="wrapper">
-
-<div id="content">
-
-<div class="pull-down white">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h4>Coming Soon...</h4>
-			</div>
-		</div>
-		<div class="tabs">
-			<div id="log-in" class="tab">Log In</div>
-			<div id="join" class="tab">Join</div>
-		</div>
-	</div>
-</div>
-
-<?php 
-$navigation = wp_nav_menu( array('menu' => 'Main','container'=>'','items_wrap' => '%3$s', 'echo' => false ));
-
-get_template_part('landscape'); ?>
-
-<div class="light">
-
-	<div class="logo-mob"></div>
-	
-	<div id="nav" class="clearfix">
-		<ul class="container menu-main menu-meta-container menu">
-			<?php echo $navigation; ?>
-		</ul>
-	</div>
-
-	<div class="main">
-		<div class="content-cover"></div>
+<nav class="clearfix">
+	<ul class="menu">
+		<li id="team"><a class="cta" href="#team">Select Your Team</a></li>
+		<li id="logo"><a class="icon-logo" href="/">It's Kicking Off</a></li>
+		<li class="icon"><a href="#team" class="cta icon-calendar">Calendar</a></li>
+		<li><a class="cta" href="#team">Bookmark</a></li>
+		<li><a class="cta" href="#team">Share</a></li>
+		<li class="icon"><a href="/info" class="icon-info">Info</a></li>
+	</ul>
+	<ul class="dates">
+		<li>
+			<a class="header" href="#">June</a>
+			<a href="#j12">12</a>
+			<a href="#j13">13</a>
+			<a href="#j14">14</a>
+			<a href="#j15">15</a>
+			<a href="#j16">16</a>
+			<a href="#j17">17</a>
+			<a href="#j18">18</a>
+			<a href="#j19">19</a>
+			<a href="#j12">20</a>
+			<a href="#j12">21</a>
+			<a href="#j12">22</a>
+			<a href="#j12">23</a>
+			<a href="#j12">24</a>
+			<a href="#j12">25</a>
+			<a href="#j12">26</a>
+			<a href="#j12">27</a>
+			<a href="#j12">28</a>
+			<a href="#j12">29</a>
+			<a href="#j12">30</a>
+			<a class="header" href="#">July</a>
+			<a href="#july01">01</a>
+			<a href="#july02">02</a>
+			<a href="#july03">03</a>
+			<a href="#july04">04</a>
+			<a href="#july05">05</a>
+			<a href="#july06">06</a>
+			<a href="#july07">07</a>
+			<a href="#july08">08</a>
+			<a href="#july09">09</a>
+			<a href="#july10">10</a>
+			<a href="#july11">11</a>
+			<a href="#july12">12</a>
+			<a href="#july13">13</a>
+		</li>
+	</ul>
+</nav>

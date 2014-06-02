@@ -5,55 +5,6 @@
  */
 ?>
 
-<?php if ( have_rows( 'sponsors', 2 ) ): ?>
-<div class="grid">
-	<div class="sponsors container clearfix">
-		
-		<ul>
-		<?php while( have_rows('sponsors', 2) ): the_row();
-        	$slide = get_sub_field('logo');
-        	$link = get_sub_field('link');
-        	$name = get_sub_field('name');
-        	$desc = get_sub_field('description'); ?>
-			<li class="tooltip">
-				<?php if($link): ?><a href="http://<?php echo $link; ?>" target="_blank" title="<?php echo the_sub_field('name'); ?>"><?php endif; ?> 
-					<img src="<?php echo $slide['sizes']['thumbnail']; ?>" alt="<?php echo $slide['alt']; ?>" />
-					<div>
-						<?php if($name):?><h5 class="sub-head"><?php echo $name; ?></h5><?php endif; ?>
-						<?php if($desc): echo '<hr/><p>'. $desc .'</p>'; endif; ?>
-					</div>
-				<?php if($link):?></a><?php endif; ?>
-			</li>
-		<?php endwhile; ?>
-		</ul>
-		<p class="note">Bristol Natural History Consortium is a charitable partnership of<br /> these 12 organisations. Registered Charity No. 1123432</p>
-	</div>
-
-	<?php if(is_front_page()){ ?>
-		<div class="bug ladybird-side move"></div>
-	<?php } ?>
-
-</div>
-<?php endif; ?>
-
-<div class="footer connect">
-
-	<div class="details top"></div>
-	<div class="details bottom"></div>
-
-	<div class="container clearfix">
-
-		<div class="row clearfix">
-			<div class="col-xs-6 col-sm-6 col-md-3 mt">
-				<h4 class="serif notm">Connect with us:</h4>
-			</div>
-			<?php get_template_part('social'); ?>
-		</div>
-
-	</div>
-
-</div>
-
 <div id="footer" class="footer">
 
 	<div class="container clearfix">
@@ -84,10 +35,6 @@
 </div>
 
 <?php wp_footer();?>
-
-</div><!-- #content -->
-
-</div><!-- #wrapper -->
 
 </body>
 </html>
