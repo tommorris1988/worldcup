@@ -13,7 +13,9 @@ get_header();
 
 global $post;
 
-$year='';
+$day_check = '';
+
+$day = get_the_date('j');
 
 $args = array(
 	'post_type'=> 'post',
@@ -27,40 +29,52 @@ $custom_posts = get_posts($args);
 
 foreach($custom_posts as $post) : setup_postdata($post);
 
-    if (mysql2date("F", $post->post_date) != $year) {
-        $year = mysql2date("F", $post->post_date);
-        $count = 1;
+    $day = get_the_date('j');
+
+    $time = get_the_time("l", $post->post_date);
+
+    $dayid = get_the_time('Fd');
+
+    if ($day != $day_check) {
+        if ($day_check != '') {
+            echo '</ul>';
         }
+        echo '<ul id="'. $dayid .'" class="day '.$time.'">'; ?>
+        <li class="date"><span></span><?php echo the_time('D'); ?><h1><?php echo the_time('j'); ?></h1><?php echo the_time('F'); ?><span></span></li>
+    <?php }
 
-    $time = mysql2date("l", $post->post_date);
-
-    echo '<ul class="day '.$time.'">';
-
-    if ($count == 1) { ?>
-
-        <li class="date"><?php echo the_time('j F'); ?></li>
-
-    <?php } ?>
+    $team = get_field('team_1');
+    $team2 = get_field('team_2'); ?>
     
         <li class="match">
 
-        	<div class="pitch">
+            <a href="<?php the_permalink();?>">
 
-        		<span class="icon-football"></span>
+            	<div class="pitch">
 
-        		<h3><?php get_my_terms(); ?></h3>
+                    <?php include("images/corners.svg"); ?>
 
-            	<?php the_title(); ?>
+            		<?php if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
 
-        	</div>
+                    <p class="sub-head">Group <?php echo get_field('group', $team); ?></p>
+                    <?php foreach($team as $t): ?>
+            		<h2><?php echo $team->name; ?></h2>
+                    <?php endforeach; ?>
+                    <span>vs</span>
+                    <h2><?php echo $team2->name; ?></h2>
+
+                	<span class="font-family-3"><?php the_time('g:i'); ?></span>
+
+            	</div>
+
+            </a>
 
         </li>
 
-    <?php 
-
+    <?php
     $count++;
 
-    echo '</ul>';
+    $day_check = $day;
 
 endforeach; 
 

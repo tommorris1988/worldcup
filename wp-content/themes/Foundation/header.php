@@ -17,6 +17,19 @@
 <script type="text/javascript" src="//use.typekit.net/jtg2rpm.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
+<script type="text/javascript">
+WebFontConfig = { fontdeck: { id: '25706' } };
+(function() {
+  var wf = document.createElement('script');
+  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})();
+</script>
+
 <!--[if IE 7]>
 <link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/ie7.css" type="text/css" media="screen" />
 <![endif]-->
@@ -40,40 +53,40 @@
 	</ul>
 	<ul class="dates">
 		<li>
-			<a class="header" href="#">June</a>
-			<a href="#j12">12</a>
-			<a href="#j13">13</a>
-			<a href="#j14">14</a>
-			<a href="#j15">15</a>
-			<a href="#j16">16</a>
-			<a href="#j17">17</a>
-			<a href="#j18">18</a>
-			<a href="#j19">19</a>
-			<a href="#j12">20</a>
-			<a href="#j12">21</a>
-			<a href="#j12">22</a>
-			<a href="#j12">23</a>
-			<a href="#j12">24</a>
-			<a href="#j12">25</a>
-			<a href="#j12">26</a>
-			<a href="#j12">27</a>
-			<a href="#j12">28</a>
-			<a href="#j12">29</a>
-			<a href="#j12">30</a>
-			<a class="header" href="#">July</a>
-			<a href="#july01">01</a>
-			<a href="#july02">02</a>
-			<a href="#july03">03</a>
-			<a href="#july04">04</a>
-			<a href="#july05">05</a>
-			<a href="#july06">06</a>
-			<a href="#july07">07</a>
-			<a href="#july08">08</a>
-			<a href="#july09">09</a>
-			<a href="#july10">10</a>
-			<a href="#july11">11</a>
-			<a href="#july12">12</a>
-			<a href="#july13">13</a>
+			<a class="header" href="#June12">June</a>
+			<a href="#June12">12</a>
+			<a href="#June13">13</a>
+			<a href="#June14">14</a>
+			<a href="#June15">15</a>
+			<a href="#June16">16</a>
+			<a href="#June17">17</a>
+			<a href="#June18">18</a>
+			<a href="#June19">19</a>
+			<a href="#June20">20</a>
+			<a href="#June21">21</a>
+			<a href="#June22">22</a>
+			<a href="#June23">23</a>
+			<a href="#June24">24</a>
+			<a href="#June25">25</a>
+			<a href="#June26">26</a>
+			<a href="#June27">27</a>
+			<a href="#June28">28</a>
+			<a href="#June29">29</a>
+			<a href="#June30">30</a>
+			<a class="header" href="#July01">July</a>
+			<a href="#July01">01</a>
+			<a href="#July02">02</a>
+			<a href="#July03">03</a>
+			<a href="#July04">04</a>
+			<a href="#July05">05</a>
+			<a href="#July06">06</a>
+			<a href="#July07">07</a>
+			<a href="#July08">08</a>
+			<a href="#July09">09</a>
+			<a href="#July10">10</a>
+			<a href="#July11">11</a>
+			<a href="#July12">12</a>
+			<a href="#July13">13</a>
 		</li>
 	</ul>
 </nav>
