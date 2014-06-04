@@ -43,8 +43,11 @@ foreach($custom_posts as $post) : setup_postdata($post);
         <li class="date"><span></span><?php echo the_time('D'); ?><h1><?php echo the_time('j'); ?></h1><?php echo the_time('F'); ?><span></span></li>
     <?php }
 
-    $team = get_field('team_1');
-    $team2 = get_field('team_2'); ?>
+    $teams = get_field('teams');
+
+    $groups = get_field('group','teams_'.$teams[0]->term_id);
+
+    ?>
     
         <li class="match">
 
@@ -56,12 +59,16 @@ foreach($custom_posts as $post) : setup_postdata($post);
 
             		<?php if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
 
-                    <p class="sub-head">Group <?php echo get_field('group', $team); ?></p>
-                    <?php foreach($team as $t): ?>
-            		<h2><?php echo $team->name; ?></h2>
-                    <?php endforeach; ?>
-                    <span>vs</span>
-                    <h2><?php echo $team2->name; ?></h2>
+                    <p class="sub-head">Group <?php echo $groups->name; ?></p>
+                    
+                    <?php $i=0; 
+                    foreach( $teams as $team ): ?>
+                		<h2><?php echo $team->name; ?></h2>
+                    <?php
+                        if($i==1){} else { echo '<span>vs</span>'; }; 
+                        $i++; 
+                    endforeach; 
+                    ?>
 
                 	<span class="font-family-3"><?php the_time('g:i'); ?></span>
 

@@ -16,10 +16,16 @@ $('.sticky-mobile').click(function ( event ) {
     $('#side-nav').toggleClass('drop-down');
 });
 
+// Close
+$('.close').click(function ( event ) {
+    event.preventDefault();
+    $('#header').toggleClass('view');
+});
+
 // To Top Button
 jQuery(document).ready(function($) {
 
-    $(".dates > a").click(function(event){     
+    $(".dates > a").click(function(event){
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top-90}, 500);
     });

@@ -12,11 +12,23 @@ get_header();
 <?php 
 
 global $wp_query;
-$term = $wp_query->get_queried_object();
 
-$id = get_queried_object()->term_id;
-$tax = get_queried_object('cat');
-$term = get_queried_object('term_id');
+$group = get_queried_object();
+
+$teams = get_terms('teams', array(
+        'fields'=>'ids',
+        'hide_empty'=>0,
+        'meta_query' => array(
+            'key' => 'group',
+            'value' => $group->name,
+            'compare' => 'LIKE'
+        )
+    )
+);
+
+// var_dump($group);
+
+// var_dump($teams);
 
 $args = array(
     'post_type'=> 'post',
@@ -24,12 +36,11 @@ $args = array(
     'posts_per_page' => '-1',
     'tax_query'=> array(
         array(
-            'taxonomy'=> $term->taxonomy,
+            'taxonomy'=> 'teams',
             'field'=> 'term_id',
-            'terms'=> $term->term_id
+            'terms'=> $teams
             )
         ),
-    'orderby' => 'custom_sort',
     'order' => 'ASC'
 );
 
@@ -55,34 +66,29 @@ foreach($custom_posts as $post) : setup_postdata($post);
         <li class="date"><span></span><?php echo the_time('D'); ?><h1><?php echo the_time('j'); ?></h1><?php echo the_time('F'); ?><span></span></li>
     <?php }
 
-    $teams = get_field('teams');
-
-    $groups = get_field('group','teams_'.$teams[0]->term_id); ?>
+    $team = get_field('team_1');
+    $team2 = get_field('team_2'); ?>
     
         <li class="match">
 
             <a href="<?php the_permalink();?>">
 
-                <div class="pitch">
+            	<div class="pitch">
 
                     <?php include("images/corners.svg"); ?>
 
-                    <?php if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
+            		<?php if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
 
-                    <p class="sub-head">Group <?php echo $groups->name; ?></p>
-                    
-                    <?php $i=0; 
-                    foreach( $teams as $team ): ?>
-                        <h2><?php echo $team->name; ?></h2>
-                    <?php
-                        if($i==1){} else { echo '<span>vs</span>'; }; 
-                        $i++; 
-                    endforeach; 
-                    ?>
+                    <p class="sub-head">Group <?php echo get_field('group', $team); ?></p>
+                    <?php foreach($team as $t): ?>
+            		<h2><?php echo $team->name; ?></h2>
+                    <?php endforeach; ?>
+                    <span>vs</span>
+                    <h2><?php echo $team2->name; ?></h2>
 
-                    <span class="font-family-3"><?php the_time('g:i'); ?></span>
+                	<span class="font-family-3"><?php the_time('g:i'); ?></span>
 
-                </div>
+            	</div>
 
             </a>
 

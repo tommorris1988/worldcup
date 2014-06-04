@@ -42,14 +42,15 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 
 <body <?php body_class(); ?> >
 
+<?php if(is_single()) {} else { ?>
 <nav class="clearfix">
 	<ul class="menu">
-		<li id="team"><a class="cta" href="#team">Select Your Team</a></li>
+		<li id="team"><a class="cta close" href="#">Select Your Team</a></li>
 		<li id="logo"><a class="icon-logo" href="/">It's Kicking Off</a></li>
-		<li class="icon"><a href="#team" class="cta icon-calendar">Calendar</a></li>
+		<li class="icon"><a href="#calendar" class="cta icon-calendar">Calendar</a></li>
 		<li><a class="cta" href="#team">Bookmark</a></li>
 		<li><a class="cta" href="#team">Share</a></li>
-		<li class="icon"><a href="/info" class="icon-info">Info</a></li>
+		<li class="icon"><a href="/info" class="cta icon-info">Info</a></li>
 	</ul>
 	<ul class="dates">
 		<li>
@@ -90,3 +91,6 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 		</li>
 	</ul>
 </nav>
+<?php } ?>
+
+<?php get_template_part('teams'); ?>

@@ -106,7 +106,7 @@ function my_jquery_enqueue() {
    wp_enqueue_script('jquery');
 }
 
-// add_action('init', 'all_scripts');
+add_action('init', 'all_scripts');
 function all_scripts() {
 	wp_enqueue_script('jquery-scripts', get_stylesheet_directory_uri().'/js/scripts.js','','',true);
 	wp_enqueue_script('jquery-init', get_stylesheet_directory_uri().'/js/init.js','','',true);
@@ -213,5 +213,14 @@ function show_future_posts($posts)
    return $posts;
 }
 add_filter('the_posts', 'show_future_posts');
+
+// Hide Admin Menus
+function remove_post_custom_fields() {
+	remove_meta_box( 'tagsdiv-teams' , 'post' , 'normal' );
+	remove_meta_box( 'tagsdiv-post_tag' , 'post' , 'normal' );
+	remove_meta_box( 'tagsdiv-groups' , 'post' , 'normal' );
+	remove_meta_box( 'categorydiv' , 'post' , 'normal' );
+}
+add_action( 'admin_menu' , 'remove_post_custom_fields' );
 
 ?>
