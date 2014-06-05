@@ -221,6 +221,59 @@ if(function_exists("register_field_group"))
 	));
 }
 
+// Taxonomies
+add_action('init', 'cptui_register_my_taxes_teams');
+function cptui_register_my_taxes_teams() {
+register_taxonomy( 'teams',array (
+  0 => 'post',
+),
+array( 'hierarchical' => false,
+	'label' => 'Teams',
+	'show_ui' => true,
+	'query_var' => true,
+	'show_admin_column' => false,
+	'labels' => array (
+  'search_items' => 'Team',
+  'popular_items' => '',
+  'all_items' => '',
+  'parent_item' => '',
+  'parent_item_colon' => '',
+  'edit_item' => '',
+  'update_item' => '',
+  'add_new_item' => '',
+  'new_item_name' => '',
+  'separate_items_with_commas' => '',
+  'add_or_remove_items' => '',
+  'choose_from_most_used' => '',
+)
+) ); 
+}
+add_action('init', 'cptui_register_my_taxes_groups');
+function cptui_register_my_taxes_groups() {
+register_taxonomy( 'groups',array (
+  0 => 'post',
+),
+array( 'hierarchical' => false,
+	'label' => 'Groups',
+	'show_ui' => true,
+	'query_var' => true,
+	'show_admin_column' => false,
+	'labels' => array (
+  'search_items' => 'Group',
+  'popular_items' => '',
+  'all_items' => '',
+  'parent_item' => '',
+  'parent_item_colon' => '',
+  'edit_item' => '',
+  'update_item' => '',
+  'add_new_item' => '',
+  'new_item_name' => '',
+  'separate_items_with_commas' => '',
+  'add_or_remove_items' => '',
+  'choose_from_most_used' => '',
+)
+) ); 
+}
 
 // Admin Menu
 function add_menu_icons_styles(){
