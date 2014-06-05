@@ -65,7 +65,13 @@ foreach($custom_posts as $post) : setup_postdata($post);
 
                 <div class="pitch">
 
-                    <?php include("images/corners.svg"); ?>
+                    <?php include("images/top-left.svg"); ?>
+
+                    <?php include("images/top-right.svg"); ?>
+
+                    <?php include("images/bottom-left.svg"); ?>
+
+                    <?php include("images/bottom-right.svg"); ?>
 
                     <?php if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
 
@@ -73,14 +79,14 @@ foreach($custom_posts as $post) : setup_postdata($post);
                     
                     <?php $i=0; 
                     foreach( $teams as $team ): ?>
-                        <h2><?php echo $team->name; ?></h2>
+                        <h1><?php echo $team->name; ?></h1>
                     <?php
                         if($i==1){} else { echo '<span>vs</span>'; }; 
                         $i++; 
                     endforeach; 
                     ?>
 
-                    <span class="font-family-3"><?php the_time('g:i'); ?></span>
+                    <span class="sub-head font-family-3"><?php the_time('g:i'); ?></span>
 
                 </div>
 

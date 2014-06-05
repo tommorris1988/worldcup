@@ -1,14 +1,10 @@
-<header id="header">
+<header id="info">
 <?php 
 $teams = get_terms('teams', array(
         'fields'=>'all',
         'hide_empty'=>0
     )
 );
-
-if(is_tax()) { 
-	$current = get_queried_object()->term_id;
-}
 ?>
 	<nav>
 		<a class="button pull-left left close" href="#">Back</a>
@@ -22,7 +18,7 @@ if(is_tax()) {
 			$group = get_field('group','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'A': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
+					<li><a href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
 					<?php
 						break;
 				} ?>
@@ -39,7 +35,7 @@ if(is_tax()) {
 			$group = get_field('group','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'B': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
+					<li><a href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
 					<?php
 						break;
 				} ?>
@@ -56,7 +52,7 @@ if(is_tax()) {
 			$group = get_field('group','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'C': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
+					<li><a href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
 					<?php
 						break;
 				} ?>
@@ -73,7 +69,7 @@ if(is_tax()) {
 			$group = get_field('group','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'D': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
+					<li><a href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
 					<?php
 						break;
 				} ?>
@@ -90,7 +86,7 @@ if(is_tax()) {
 			$group = get_field('group','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'E': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
+					<li><a href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
 					<?php
 						break;
 				} ?>
@@ -107,7 +103,7 @@ if(is_tax()) {
 			$group = get_field('group','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'F': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
+					<li><a href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
 					<?php
 						break;
 				} ?>
@@ -124,7 +120,7 @@ if(is_tax()) {
 			$group = get_field('group','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'G': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
+					<li><a href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
 					<?php
 						break;
 				} ?>
@@ -141,7 +137,7 @@ if(is_tax()) {
 			$group = get_field('group','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'H': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
+					<li><a href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?></a></li>
 					<?php
 						break;
 				} ?>
@@ -151,6 +147,6 @@ if(is_tax()) {
 		</ul>
 	</section>
 
-	<a class="button bar large" href="<?php bloginfo('home'); ?>">Show all</a>
+	<a class="button bar large" href="/">Show all</a>
 
 </header>

@@ -22,6 +22,12 @@ $('.close').click(function ( event ) {
     $('#header').toggleClass('view');
 });
 
+// Sticky Scroll Nav
+$(document).ready(function(){
+    $(".details").sticky({topSpacing:0});
+    $("#side-nav.follow").sticky({topSpacing: 90});
+});
+
 // To Top Button
 jQuery(document).ready(function($) {
 
@@ -30,4 +36,21 @@ jQuery(document).ready(function($) {
         $('html,body').animate({scrollTop:$(this.hash).offset().top-90}, 500);
     });
 
+});
+
+// Bookmark
+
+$(function() {
+    $('#bookmarkme').click(function() {
+        if (window.sidebar && window.sidebar.addPanel) {
+            window.sidebar.addPanel(document.title,window.location.href,'');
+        } else if(window.external && ('AddFavorite' in window.external)) {
+            window.external.AddFavorite(location.href,document.title); 
+        } else if(window.opera && window.print) {
+            this.title=document.title;
+            return true;
+        } else {
+            alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != - 1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+        }
+    });
 });
