@@ -1,175 +1,98 @@
 <?php
 /**
- * Displays all single pages unless specified otherwise.
+ * This template displays the blog posts index page.
  * @package WordPress
  * @subpackage Foundation_Theme
  */
-get_header( );
+get_header();
 ?>
 
-<?php if (have_rows('slideshow')): ?>
-    <div class="container">
+<article class="matches">
 
-        <div class="flexslider fullslider">
-            <ul class="slides">
-            <?php while(have_rows('slideshow')): the_row();
-        	$slide = get_sub_field('image');
-        	$post_object = get_sub_field('link');
-        	$size = wp_get_attachment_image_src( $slide['id'], 'slide' ); ?>
-                <li>
-                	<img src="<?php echo $slide['sizes']['slide']; ?>" alt="<?php echo $slide['alt']; ?>" width="720" height="452" />
-                </li>
-            <?php endwhile; ?>
-            </ul>
-        </div>
+<?php 
 
-    </div>
+global $post;
 
-</div><!-- .main -->
-</div><!-- .light -->
+$day_check = '';
 
-<div class="container">
-<div class="main">
+$day = get_the_date('j');
 
-    <div class="flexslider carousel">
-        <ul class="slides">
-        <?php while(have_rows('slideshow')): the_row();
-        $post_object = get_sub_field('link'); ?>
-            <li>
-                <div class="caption">
-                    <a href="<?php echo get_permalink($post_object->ID); ?>">
-                        <h4><?php echo the_sub_field('caption');?></h4>
-                    </a>
-                </div>
-            </li>
-        <?php endwhile; ?>
-        </ul>
-    </div>
+$args = array(
+	'post_type'=> 'post',
+    'post_status' => array('future','publish'),
+    'posts_per_page' => '-1',
+    'orderby' => 'post_date',
+    'order' => 'ASC'
+    );
 
+$custom_posts = get_posts($args);
 
-    <div class="slideshow-nav">
-        <ul>
-            <?php while(have_rows('slideshow')): the_row(); 
-            $post_object = get_sub_field('link');
-            ?>
-            <li class="<?php echo get_color(); ?>"><div></div></li>
-            <?php endwhile; ?>
-        </ul>
-    </div>
+foreach($custom_posts as $post) : setup_postdata($post);
 
+    $day = get_the_date('j');
 
-<?php endif; wp_reset_postdata(); ?>
+    $time = get_the_time("l", $post->post_date);
 
-</div><!-- .main -->
-</div><!-- .container -->
+    $dayid = get_the_time('Fd');
 
+    if ($day != $day_check) {
+        if ($day_check != '') {
+            echo '</ul>';
+        }
+        echo '<ul id="'. $dayid .'" class="day '.$time.'">'; ?>
+        <li class="date"><span></span><?php echo the_time('D'); ?><h1><?php echo the_time('j'); ?></h1><?php echo the_time('M'); ?><span></span></li>
+    <?php }
 
-<div class="post-wrapper first">
-<div class="container main clearfix">
+    $teams = get_field('teams');
 
+    $groups = get_field('group','teams_'.$teams[0]->term_id);
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    ?>
+    
+        <li class="match<?php if('publish' == get_post_status()) { echo ' old'; } ?>">
 
-<div class="row">
-	
-	<div class="col-md-8 divider">
+            <a href="<?php the_permalink();?>">
 
-		<div id="<?php echo $post->ID; ?>" class="content clearfix">
+            	<div class="pitch">
 
-			<div class="divider-left"></div>
+                    <?php include("images/top-left.svg"); ?>
 
-			<h3 class="title"><?php the_title(); ?> <?php edit_post_link(); ?></h3>
-			<?php the_content(); ?>
-			
-		</div>
+                    <?php include("images/top-right.svg"); ?>
 
-	</div>
+                    <?php include("images/bottom-left.svg"); ?>
 
-	<ul class="col-md-4 sidebar">
-		
-		<div id="side-nav" class="follow">
-        <a class="mobile-menu-icon" href="#">
-				<div></div>
-				<div></div>
-				<div></div>
-				</a>
-        <a class="sticky-mobile">
-              <span></span>
-        </a>
-			<ul>
-				<li><a href="<?php echo bloginfo('home'); ?>" class="back">« Back</a></li>
-				<li><h5><a href="#<?php echo $post->ID; ?>"><?php the_title();?></a></h5></li>
-			<?php
+                    <?php include("images/bottom-right.svg"); ?>
 
-			$i = 1;
-			$id = get_the_id();
-			$type = get_post_type();
-			$args = array(
-				'post_parent'=>$id,
-				'post_type'=> $type
-				);
-			$children = get_children( $args );
-			if ( empty($children) ) {
+            		<?php if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
 
-			} else {
+                    <p class="sub-head">Group <?php echo $groups->name; ?></p>
+                    
+                    <?php $i=0; 
+                    foreach( $teams as $team ): ?>
+                		<h1><?php echo $team->name; ?></h1>
+                    <?php
+                        if($i==1){} else { echo '<span>vs</span>'; }; 
+                        $i++; 
+                    endforeach; 
+                    ?>
 
-					foreach ( $children as $post ):
-						setup_postdata($post);
-			
-					echo '<li><h5><a href="#'.$post->ID.'" class="scroll">';
-					echo the_title();
-					echo '</a></h5></li>';
-			
-					endforeach;
+                	<span class="sub-head font-family-3"><?php the_time('g:i'); ?></span>
 
-			}
-			
-			echo '</ul>';
+            	</div>
 
-				if ( have_rows('documents') ) :
-				
-				echo '<ul><li><h5 class="sub-head">Reports</h5></li>';
+            </a>
 
-					while(have_rows('documents')): the_row();
+        </li>
 
-					$attachment_id = get_sub_field('file');
-					$url = wp_get_attachment_url( $attachment_id );
-					$title = get_the_title( $attachment_id );
-				
-					echo '<li><h5><a class="file" href="'.$url.'" >'.$title.'</a></h5></li>';
-				
-					endwhile;
+    <?php
+    $count++;
 
-				echo '</ul>';
+    $day_check = $day;
 
-				endif;
+endforeach; 
 
-				if ( have_rows('links') ) :
+?>
 
-				echo '<ul>';
-
-					echo '<li><h5 class="sub-head">External Links</h5></li>';
-
-					while(have_rows('links')): the_row();
-				
-						echo '<li><h5><a class="link" target="_blank" href="http://'.get_sub_field('url').'" >'.get_sub_field('label').'</a></h5></li>';
-				
-					endwhile;
-				
-				echo '</ul>';
-
-				endif;?>
-		</div>
-		
-	</ul>
-
-</div>
-<?php endwhile; else: ?>
-<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?>
-
-
-</div>
-</div>
+</article>
 
 <?php get_footer(); ?>
