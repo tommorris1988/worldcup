@@ -1642,55 +1642,21 @@ Media
 /* Large desktop */
 @media (min-width: 1500px) {
 
-	#isotope {
-		width:100%;
-		max-width:1280px;
-	}
 
-	.grid-sizer {
-		width:85px;
-		height:auto;
-		min-height:85px;
-	}
 
 }
 
 /* Large desktop */
 @media (min-width: 1200px) {
 
-	.content blockquote {
-		position:absolute;
-		right:-40%;
-		padding-left:35px;
-		width:40%;
-		letter-spacing:0.01em;
-		font-size:1.5em;
-		line-height:1.5em;
-		margin:0;
-	}
-	.content blockquote p {
-		border-top:4px solid rgb(208,173,43);
-		color:rgb(208,173,43);
-		padding-top:0.6em;
-	}
-	.content blockquote p:after {
-		content:' ”';
-		display:inline;
-		font-family:'jubilat',serif;
-	}
+	
 	
 }/*/mediaquery*/
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 992px) and (max-width: 1200px) {
 
-	.divider {
-		padding-right:4.2%;
-		border-right:1px solid #ddd;
-	}
-	.push-left {
-		padding-left:4.2%;
-	}
+	
 
 }/*/mediaquery*/
 
@@ -1722,26 +1688,6 @@ Media
 	.hidden-small {
 		display:none !important;
 		}
-
-	.category .even,
-	.category .end {
-		clear:both;
-	}
-	
-	.homeslider {
-		margin-bottom:10px;
-		}
-
-	.grid .end {
-		clear:none;
-	}
-	.grid,
-	.grid .row {
-		clear:none;
-	}
-	.grid .entry {
-		height:450px;
-	}
 
 	/* Menu */
 	.menu-main {
@@ -1793,28 +1739,26 @@ Media
 		font-size:1.2em;
 	}
 
-	.even {
-		clear:both;
+	/* Nav */
+	nav .dates {
+		display:block;
+		white-space:nowrap;
+    	overflow-x:auto;
 	}
-	.entry h4 {
-		font-size:2.15em;
+	nav .dates li {
+		display:inline;
+		font-size:0;
 	}
-	.item h4 {
-		font-size:1.85em;
+	nav .dates li a {
+		display:inline-block;
+		min-width:3em;
+		font-size:14px;
 	}
-	.more {
-		font-size:1em;
+	nav .dates li a.header {
+		font-size:20px;
 	}
 		
 	/* Global */
-
-	#content {
-		background:url(images/paper.png) repeat 0 0 rgb(246,240,232);
-	}
-
-	.light {
-		padding-top:35px;
-	}
 	
 	.open .content-cover {
 		position:absolute;
@@ -1858,6 +1802,12 @@ Media
 		margin:0 auto;
 		padding:50px 10px;
 		}
+
+	/* Windows */
+	#helper {
+		background-image:url('images/helper-mob.png');
+		background-size:80% auto;
+	}
 		
 	/* Menus */
 	.pull-down .container {

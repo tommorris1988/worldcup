@@ -11,8 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
-<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.png?ver=04.04.14" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php echo bloginfo( 'stylesheet_url' ); ?>?ver=19.05.14" />
+<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.png?ver=06.06.14" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo bloginfo( 'stylesheet_url' ); ?>?ver=06.06.14" />
 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/check.js"></script>
 <script type="text/javascript" src="//use.typekit.net/jtg2rpm.js"></script>
@@ -65,7 +65,7 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 		<li id="team"><a class="cta grey close" href="#">Select Your Team</a></li>
 		<li id="logo"><a class="icon-logo" href="/">It's Kicking Off</a></li>
 		<li class="icon"><a href="<?php bloginfo('stylesheet_directory'); ?>/images/ItsKickingOff_Brazil_2014_World_Cup_Calendar.ics" class="cta grey icon-calendar">Calendar</a></li>
-		<li><a id="bookmarkme" href="#" rel="sidebar" title="Bookmark this Page" class="cta grey">Bookmark</a></li>
+		<li><a id="bookmarkme" href="#" rel="sidebar" title="Bookmark this Page" class="cta hidden-xs grey">Bookmark</a></li>
 		<li><a class="cta grey" href="#team">Share</a></li>
 		<li class="icon"><a href="<?php bloginfo('home'); ?>/info" class="cta grey icon-info">Info</a></li>
 	</ul>
