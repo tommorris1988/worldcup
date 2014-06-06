@@ -21,11 +21,14 @@ $('.close').click(function ( event ) {
     event.preventDefault();
     $('#header').toggleClass('view');
 });
+$('.close-landing').click(function ( event ) {
+    event.preventDefault();
+    $('#landing').toggleClass('view');
+});
 
 // Sticky Scroll Nav
 $(document).ready(function(){
     $(".details").sticky({topSpacing:0});
-    $("#side-nav.follow").sticky({topSpacing: 90});
 });
 
 // Bookmark

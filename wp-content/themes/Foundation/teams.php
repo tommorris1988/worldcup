@@ -1,4 +1,4 @@
-<header id="header">
+<header id="header" class="fader">
 <?php 
 $teams = get_terms('teams', array(
         'fields'=>'all',
