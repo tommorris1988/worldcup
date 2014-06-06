@@ -1,4 +1,4 @@
-<header id="landing" class="page fader view">
+<header id="landing" class="page fader">
 
     <article class="content">
         <span class="icon-whistle clearfix"></span>

@@ -5,7 +5,7 @@
 $teams = get_field('teams');
 ?>
 
-<div class="social bar">
+<div class="social bar <?php if($content = $post->post_content ){} else { echo 'fixed'; }?>">
 	<ul>
 		<li>Share:</li>
 		<li><a class="icon icon-twitter" rel="nofollow" href="http://twitter.com/home?status=<?php echo urlencode("#itskickingoff "); echo $teams[0]->name.'vs'.$teams[1]->name;?>&text=<?php the_title(); ?>" title="Tweet This" target="_blank">Twitter</a></li>

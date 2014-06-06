@@ -21,6 +21,12 @@ Author: Thomas Morris
 	background-size:100% auto;
 }
 
+.icon-close {
+	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE1LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIxNi4zOTFweCIgaGVpZ2h0PSIxNi4zOTFweCIgdmlld0JveD0iMCAwIDE2LjM5MSAxNi4zOTEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDE2LjM5MSAxNi4zOTEiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cG9seWdvbiBmaWxsPSIjRkZGRkZGIiBwb2ludHM9IjAsMy4wMzEgMy4wMywwIDguMTk0LDUuMTY0IDEzLjM1OSwwIDE2LjM5MSwzLjAzMSAxMS4yMjYsOC4xOTUgMTYuMzkxLDEzLjM1OSAxMy4zNTksMTYuMzkxIAoJOC4xOTQsMTEuMjI3IDMuMDMsMTYuMzkxIDAsMTMuMzU5IDUuMTYzLDguMTk1ICIvPgo8L3N2Zz4=');
+	background-repeat: no-repeat;
+	background-size:100% auto;
+}
+
 .icon-calendar {
 	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE1LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSI1LjEwMXB4IiBoZWlnaHQ9IjUuNTE4cHgiIHZpZXdCb3g9IjAgMCA1LjEwMSA1LjUxOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNS4xMDEgNS41MTgiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsPSIjQTNBM0EzIiBkPSJNMS4zMDgsNC40MTZoMC45NTFjMC4wOTIsMCwwLjE2Ny0wLjA3MiwwLjE2Ny0wLjE2NVMyLjM1MSw0LjA4MywyLjI1OSw0LjA4M2gtMC42MWwwLjI4NS0wLjIyCgljMC4zMS0wLjI0LDAuNDYtMC4zODUsMC40Ni0wLjY3OFYzLjE4MWMwLTAuMzI3LTAuMjQtMC41NC0wLjYwMy0wLjU0Yy0wLjI2NSwwLTAuNDMsMC4wOTUtMC41NywwLjI1OAoJYy0wLjAyNywwLjAzMi0wLjA0NSwwLjA3Ny0wLjA0NSwwLjEyYzAsMC4wOTgsMC4wNzgsMC4xNzUsMC4xNzUsMC4xNzVjMC4wNiwwLDAuMTA1LTAuMDI3LDAuMTMtMC4wNTYKCWMwLjA5OC0wLjEwNCwwLjE3NS0wLjE1MSwwLjI4NS0wLjE1MWMwLjEzNywwLDAuMjM1LDAuMDc5LDAuMjM1LDAuMjI3YzAsMC4xNDYtMC4wODUsMC4yNDMtMC4zMDMsMC40MjFMMS4yMDEsNC4wNDEKCWMtMC4wNjUsMC4wNTMtMC4xLDAuMTE3LTAuMSwwLjE5MkMxLjEwMSw0LjM0OSwxLjE4OCw0LjQxNiwxLjMwOCw0LjQxNiIvPgo8cGF0aCBmaWxsPSIjQTNBM0EzIiBkPSJNNC4xNzgsMC43Mjl2MC4xNjdjMCwwLjI3NS0wLjI0MSwwLjQ5OS0wLjUzOCwwLjQ5OWMtMC4yOTYsMC0wLjUzNy0wLjIyNC0wLjUzNy0wLjQ5OVYwLjcyOUgyLjAxNXYwLjE2NwoJYzAsMC4yNzUtMC4yNDEsMC40OTktMC41MzgsMC40OTlTMC45NCwxLjE3MiwwLjk0LDAuODk2VjAuNzI5SDB2MS4zMzN2My40NTVoMy4zODNsMS43MTgtMS42MzlWMi4wNjJWMC43MjlINC4xNzh6IE0zLjM4MywzLjg3OQoJVjQuMTJDMy4zNjgsNC4xMjIsMy4zNTQsNC4xMjMsMy4zMzgsNC4xMjNjLTAuMTksMC0wLjMwMi0wLjA5Ny0wLjMwMi0wLjIxN1YzLjkwMWMwLTAuMTM2LDAuMTI3LTAuMjE2LDAuMzAyLTAuMjE2CgljMC4xNjUsMCwwLjI4NywwLjA3MiwwLjMsMC4xOTNIMy4zODN6IE0zLjA4OCwzLjE2NlYzLjE2MWMwLTAuMTA4LDAuMDkyLTAuMjAzLDAuMjUtMC4yMDNjMC4xNTgsMCwwLjI1LDAuMDk4LDAuMjUsMC4yMDV2MC4wMDUKCWMwLDAuMTIzLTAuMDk4LDAuMjEzLTAuMjUsMC4yMTNDMy4xODYsMy4zODEsMy4wODgsMy4yODgsMy4wODgsMy4xNjYgTTQuNTM1LDMuODc5SDQuMDFDMy45OTcsMy42OTgsMy44OTYsMy41OTUsMy43MywzLjUwOAoJYzAuMTM1LTAuMDgyLDAuMjIzLTAuMTk0LDAuMjIzLTAuMzgyVjMuMTIxYzAtMC4yNzEtMC4yNDUtMC40OC0wLjYxNS0wLjQ4cy0wLjYxNSwwLjIxMy0wLjYxNSwwLjQ4djAuMDA1CgljMCwwLjE4OCwwLjA4NywwLjMsMC4yMjIsMC4zODJDMi43NjEsMy41OTMsMi42NjMsMy43MTksMi42NjMsMy45MzF2MC4wMDVjMCwwLjMwNiwwLjI4OCwwLjUwNiwwLjY3NSwwLjUwNgoJYzAuMDE2LDAsMC4wMy0wLjAwMywwLjA0NS0wLjAwM3YwLjUxNEgwLjU2NXYtMi44OWgzLjk3VjMuODc5eiIvPgo8cGF0aCBmaWxsPSIjQTNBM0EzIiBkPSJNMS40NzgsMEMxLjMxMSwwLDEuMTc0LDAuMTE4LDEuMTc0LDAuMjY1djAuNjMyYzAsMC4xNDYsMC4xMzYsMC4yNjUsMC4zMDMsMC4yNjUKCWMwLjE2NywwLDAuMzAzLTAuMTE4LDAuMzAzLTAuMjY1VjAuMjY1QzEuNzgxLDAuMTE4LDEuNjQ1LDAsMS40NzgsMCIvPgo8cGF0aCBmaWxsPSIjQTNBM0EzIiBkPSJNMy45NDQsMC4yNjVDMy45NDQsMC4xMTgsMy44MDgsMCwzLjY0MSwwQzMuNDc0LDAsMy4zMzgsMC4xMTgsMy4zMzgsMC4yNjV2MC42MzIKCWMwLDAuMTQ2LDAuMTM2LDAuMjY1LDAuMzAzLDAuMjY1YzAuMTY3LDAsMC4zMDMtMC4xMTgsMC4zMDMtMC4yNjVWMC4yNjV6Ii8+Cjwvc3ZnPg==');
 	background-repeat: no-repeat;
@@ -502,6 +508,14 @@ Landing
 	left:0;
 	top:0;
 }
+.firsttime #landing {
+	opacity:1;
+	visibility: visible;
+}
+.firsttime #landing.fader.view {
+	opacity:0 !important;
+	visibility: hidden !important;
+}
 #landing .icon-whistle {
 	background-size: auto 100%;
 	background-position: center center;
@@ -537,6 +551,23 @@ Helper
 	z-index:9;
 	left:0;
 	top:0;
+}
+.firsttime #helper {
+	opacity:1;
+	visibility: visible;
+}
+.firsttime #helper.fader.view {
+	opacity:0 !important;
+	visibility: hidden !important;
+}
+#helper .icon-close {
+	background-size:auto 100%;
+	position:fixed;
+	top:4em;
+	right:4em;
+	height:2em;
+	width:2em;
+	border:0;
 }
 
 /****************************** 
@@ -1280,6 +1311,12 @@ Social
 	padding-left:0;
 	padding-right:0;
 }
+.social.fixed {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+}
 .social ul li {
 	font-size:2em;
 	border-right:1px solid rgb(59,156,62);
@@ -1456,7 +1493,9 @@ a {
 	}
 
 .fader,
-.fader.view {
+.fader.view,
+#helper, #helper.view,
+#landing, #landing.view {
 	-webkit-transition: opacity 0.3s ease;
     -moz-transition: opacity 0.3s ease;
     -o-transition: opacity 0.3s ease;
