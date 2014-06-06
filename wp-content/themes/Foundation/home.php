@@ -76,7 +76,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
                     endforeach; 
                     ?>
 
-                	<span class="sub-head font-family-3"><?php the_time('g:i'); ?></span>
+                	<span class="sub-head font-family-3"><?php the_time('H:i'); ?></span>
 
             	</div>
 

@@ -11,7 +11,6 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <header>
         <nav>
             <a class="button pull-left left" href="<?php bloginfo('home'); ?>">Back</a>
-            <?php previous_post_link( '%link', 'Next Page', FALSE ); ?>
         </nav>
     </header>
 
@@ -19,7 +18,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <span class="icon-info-white circle clearfix"></span>
         <?php 
         if($content = $post->post_content ) :
-            echo '<span class="icon-info"></span>';
+            echo '<span class="icon-logo-white"></span>';
             the_content();
         else :
             echo '<p class="center">Sorry, this page is under construction..</p>';

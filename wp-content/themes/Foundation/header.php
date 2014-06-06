@@ -42,7 +42,7 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 
 <body <?php body_class(); ?> >
 
-<?php if(is_single()) {} else { ?>
+<?php if(is_single() || is_page()) {} else { ?>
 <nav class="clearfix">
 	<ul class="menu">
 		<li id="team"><a class="cta close" href="#">Select Your Team</a></li>
@@ -50,7 +50,7 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 		<li class="icon"><a href="#calendar" class="cta icon-calendar">Calendar</a></li>
 		<li><a id="bookmarkme" href="#" rel="sidebar" title="Bookmark this Page" class="cta">Bookmark</a></li>
 		<li><a class="cta" href="#team">Share</a></li>
-		<li class="icon"><a href="/info" class="cta icon-info">Info</a></li>
+		<li class="icon"><a href="<?php bloginfo('home'); ?>/info" class="cta icon-info">Info</a></li>
 	</ul>
 	<ul class="dates">
 		<li>
