@@ -30,11 +30,14 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 				</section>
 			</div>
 		<?php else : ?>
-			<div class="scores names clearfix">
-				<span class="icon-football"></span>
-				<h1><?php echo $teams[0]->name; ?></h1>
-				<span>vs</span>
-				<h1><?php echo $teams[1]->name; ?></h1>
+			<div class="scores">
+				<section class="left">
+					<h1><?php echo $teams[0]->name; ?></h1>
+				</section>
+				<span class="vs">vs</span>
+				<section class="right">
+					<h1><?php echo $teams[1]->name; ?></h1>
+				</section>
 			</div>
 		<?php endif; ?>
 		<div class="details bar">

@@ -526,18 +526,32 @@ Landing
 }
 
 /****************************** 
+Helper
+******************************/
+#helper {
+	background: url('images/helper.png') no-repeat center center rgba(0,0,0,0.7);
+	background-size:auto;
+	position:fixed;
+	width:100%;
+	height:100%;
+	z-index:9;
+	left:0;
+	top:0;
+}
+
+/****************************** 
 Global
 ******************************/
 
 .cta {
-	color:#a3a3a3;
+	color:#ffffff;
 	font-family: 'bebas_neueregular', 'bebas-neue', 'Helvetica Neue', Helvetica, sans-serif;
 	text-transform: uppercase;
 	display:inline-block;
 	border:0.15em solid #ffffff;
 	padding:0.5em 20px;
-	font-size:1.5em;
 	transition:color 0.3s ease;
+	background-color:transparent;
 }
 .cta:hover {
 	color:rgb(68,181,72);
@@ -558,6 +572,7 @@ Global
 
 .cta.wide {
 	min-width:7em;
+	font-size:1.3em;
 }
 
 nav .cta {
@@ -565,6 +580,7 @@ nav .cta {
 }
 
 .cta.grey {
+	color:#a3a3a3;
 	border-color:#a3a3a3;
 }
 .cta.grey:hover {
@@ -617,7 +633,7 @@ nav .cta {
 }
 
 .matches {
-	padding:100px 0 0 0;
+	padding:120px 0 0 0;
 }
 
 .day {
@@ -1052,20 +1068,20 @@ article .content a {
 .content ul li {
 	list-style:disc;
 }
+.content small {
+	font-size:70%;
+}
 .content img {
 	display:block;
 	height:auto;
 	margin:1em 0 1em 0;
-	background:url(images/placeholder.gif) center center no-repeat #f2f2f2;
 	max-width:100%;
 	width:100%;
 }
-
 .content img.alignnone {
 	width:auto;
 	height:auto;
 }
-
 .content .alignleft {
 	float:left;
 	margin-right:20px;
@@ -1160,14 +1176,19 @@ Page
 	background-color:rgb(68,181,72);
 	display:flex;
 	flex-wrap:wrap;
-	padding:10% 5%;
+	padding:5%;
 	color:#ffffff;
 }
 .page header,
 .error404 header {
 	padding:0;
 }
-.page header nav,
+.page header nav {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+}
 .error404 header nav {
 	background-color:rgb(59,156,62);
 }
@@ -1205,9 +1226,27 @@ Info
 	margin:1em 0 2em 0;
 }
 .page article p {
-	font-size:1.5em;
+	font-size:1.4em;
 	font-weight:100;
 	display:block;
+	margin:1.2em auto;
+}
+.dark {
+	color:rgb(59,156,62);
+}
+ul.social {
+	width:100%;
+	text-align: center;
+}
+ul.social li {
+	display:inline-block;
+}
+ul.social li a {
+	background-size: auto 80%;
+	background-position: center;
+	border:none;
+	width:3em;
+	height:3em;
 }
 
 /****************************** 
@@ -1456,6 +1495,99 @@ Extras
 	background: #eee;
 	color:#000;
 }
+
+/****************************** 
+Email
+******************************/
+.cw-epu-form {
+	text-align:center;
+}
+.cw-epu-input-text {
+	width:280px !important;
+	display: inline-block !important;
+	border: none !important;
+	border-radius: 8px 0 0 8px !important;
+	font-family:"Apercu Bold", Calibri, sans-serif; font-size-adjust:0.508; font-weight:bold; font-style:normal;
+	font-size: 18px !important;
+	text-transform: uppercase;
+	padding: 0 0 0 15px !important;
+	height: 45px !important;
+	color: #ff0000 !important;
+	margin: 0 !important;
+}
+.cw-epu-input-submit {
+	display: inline-block !important;
+	background-color: #cc0000;
+	border: none!important;
+	width: 110px;
+	color: #ff0000;
+	text-transform: uppercase;
+	font-family:"Apercu Bold", Calibri, sans-serif; font-size-adjust:0.508; font-weight:bold !important; font-style:normal;
+	font-size: 18px !important;
+	border-radius: 0 8px 8px 0;
+	height: 45px !important;
+	cursor: pointer;
+	margin: 0 !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+}
+.cw-epu-msg-success {
+	font-family:"Apercu Bold", Calibri, sans-serif; font-size-adjust:0.508; font-weight:bold; font-style:normal;
+    text-align: center;
+    color: #ffffff	 !important;
+    text-transform: uppercase;
+    font-size: 18px !important;
+}
+#mc_embed_signup *,
+#mc_embed_signup p {
+	display:inline;
+	vertical-align: top;
+}
+#mc_embed_signup input {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color:rgb(59,156,62);
+	font-size: 1em;
+	line-height: 100%;
+	height:48px;
+	border:1px solid #fff;
+	margin:0px;
+}
+#mc_embed_signup input[type="submit"] {
+	background-color:rgb(59,156,62);
+	border:0px solid rgb(59,156,62);
+	color:rgb(68,181,72);
+	margin-left:-4px;
+	height:49px;
+}
+#mc_embed_signup input[type="submit"]:hover {
+	border-width:0;
+}
+.right-corners {
+	position: relative;
+}
+.right-corners:after,
+.right-corners:before {
+	position:absolute;
+	display:inline-block;
+	border-style:solid;
+	content:'';
+	right:0;
+	width:0;
+	height:0;
+}
+.right-corners:after {
+	top:0;
+	border-width: 0 10px 10px 0;
+	border-color: transparent rgb(68,181,72) transparent;
+}
+.right-corners:before {
+	bottom:0;
+	border-width: 0 0 10px 10px;
+	border-color: transparent transparent rgb(68,181,72);
+}
+
 
 /****************************** 
 Media

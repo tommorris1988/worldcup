@@ -4456,12 +4456,11 @@ a[class^='tag-link-']:hover{
 
 @media only screen and (max-width: 480px) {
 
-h1.hashtag{margin: 80px 0 20px 0; font-size: 45px !important; }
-.quotescollection p {margin: 20px 0 20px 0 !important; font-size: 35px !important;}
-h4.info {margin: 20px 0 30px 0; line-height: 1.4em; font-size:18px !important;  }
-h5.sign-up-info { font-size:16px !important;  }
-h5.sign-up-info br { display: none; !important;  }
-
+  h1.hashtag{margin: 80px 0 20px 0; font-size: 45px !important; }
+  .quotescollection p {margin: 20px 0 20px 0 !important; font-size: 35px !important;}
+  h4.info {margin: 20px 0 30px 0; line-height: 1.4em; font-size:18px !important;  }
+  h5.sign-up-info { font-size:16px !important;  }
+  h5.sign-up-info br { display: none; !important;  }
 
 }
 
@@ -4469,35 +4468,28 @@ h5.sign-up-info br { display: none; !important;  }
 
 h1.hashtag{margin: 80px 0 20px 0; font-size: 35px !important; }
 
-.cw-epu-input-text {
+  .cw-epu-input-text {
+  	width:180px !important;
+  	font-size: 12px !important;
+  	padding: 0 0 0 15px !important;
+  	height: 40px !important;
+  	margin: 0 !important;
+  }
 
-	width:180px !important;
-	font-size: 12px !important;
-	padding: 0 0 0 15px !important;
-	height: 40px !important;
-	margin: 0 !important;
-
-
-}
-
-.cw-epu-input-submit {
-	display: inline-block !important;
-	background-color: #cc0000;
-	border: none!important;
-	width: 60px;
-	color: #ff0000;
-	text-transform: uppercase;
-	font-family:"Apercu Bold", Calibri, sans-serif; font-size-adjust:0.508; font-weight:bold !important; font-style:normal;
-	font-size: 12px !important;
-	border-radius: 0 8px 8px 0;
-	height: 40px !important;
-	cursor: pointer;
-	margin: 0 !important;
-
-}
-
-
-
+  .cw-epu-input-submit {
+  	display: inline-block !important;
+  	background-color: #cc0000;
+  	border: none!important;
+  	width: 60px;
+  	color: #ff0000;
+  	text-transform: uppercase;
+  	font-family:"Apercu Bold", Calibri, sans-serif; font-size-adjust:0.508; font-weight:bold !important; font-style:normal;
+  	font-size: 12px !important;
+  	border-radius: 0 8px 8px 0;
+  	height: 40px !important;
+  	cursor: pointer;
+  	margin: 0 !important;
+  }
 
 }
 

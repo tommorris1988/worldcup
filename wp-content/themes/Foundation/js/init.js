@@ -25,6 +25,10 @@ $('.close-landing').click(function ( event ) {
     event.preventDefault();
     $('#landing').toggleClass('view');
 });
+$('#helper').click(function ( event ) {
+    event.preventDefault();
+    $(this).toggleClass('view');
+});
 
 // Sticky Scroll Nav
 $(document).ready(function(){
