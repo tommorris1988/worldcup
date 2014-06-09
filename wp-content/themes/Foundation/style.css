@@ -478,6 +478,14 @@ header ul li a:hover,
 header .letter a:hover {
 	color:#ffffff;
 }
+#header li span {
+	font-family: 'machine_btregular', 'bebas_neueregular', 'bebas-neue', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size:0.8em;
+	line-height:1em;
+	vertical-align: middle;
+	color:rgb(59,156,62);
+	margin-left:5px;
+}
 
 header nav {
 	position:absolute;
@@ -948,10 +956,10 @@ Match
 }
 .single-post header section {
 	width:50%;
-	max-width:300px;
+	max-width:350px;
 	display:inline-block;
 	vertical-align:top;
-	padding:6% 0 6% 0;
+	padding:6% 40px;
 }
 .single-post p.sub-head {
 	color:rgb(68,181,72);
@@ -1379,7 +1387,7 @@ Tooltips
 	background-color:#000;
 	color:#ffffff;
 	padding:5px 20px;
-	min-width:150px;
+	min-width:100px;
 	width:auto;
 	display:inline-block;
 	white-space: nowrap;
@@ -1767,6 +1775,7 @@ Media
 	nav .menu {
 		padding:30px 15px;
 		font-size:1.2em;
+		height:7em;
 	}
 	nav #logo a {
 		background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE1LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIzOC4xNnB4IiBoZWlnaHQ9IjQwLjIwOXB4IiB2aWV3Qm94PSIwIDAgMzguMTYgNDAuMjA5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzOC4xNiA0MC4yMDkiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsPSIjRUEzMTQ0IiBkPSJNMzUuNTMzLDIxLjM4NUwzNS41MzMsMjEuMzg1bC0wLjcyOS0wLjY1M2MtMi4zMzYtMS43NDItOS40NjgtNS42MjktMTAuODM0LTUuOTU1CgljLTAuMzU0LTAuMDg1LTAuNzQ0LTAuMTI3LTEuMTU2LTAuMTI3Yy0xLjM0NywwLTIuNTY3LDAuNDYtMi42NjIsMC40OTdMMCwyNC4zMDh2NC4wMjhsMTAuNzA1LDguMDYzbDUuODg1LTIuMTA0CgljMS45MzEsMy40NjEsNS41MSw1LjcwMyw5LjQ4OSw1Ljg5OGMwLjE5LDAuMDEsMC4zODMsMC4wMTUsMC41NzMsMC4wMTVjNi4xNDIsMCwxMS4xODktNC44MSwxMS40OTItMTAuOTQ2CglDMzguMjg4LDI2LjQwMSwzNy4zNTksMjMuNjA0LDM1LjUzMywyMS4zODUgTTM1LjY3MSwyOS4xNGMtMC4yNDUsNC45NjktNC40MjUsOC44MzQtOS40NzEsOC41OAoJYy0zLjIzOC0wLjE2LTYuMTUyLTIuMDU1LTcuNjIxLTQuOTUxbC0wLjU3NS0xLjYwOWwtNi44NzUsMi40NThsLTguNjUxLTYuNTE3di0xLjE5N2wxMi41My01LjY5Nmw4LjcxMyw1Ljc4OWwzLjA2NS0xLjQ2OAoJbC04LjczMS01LjcwNmwzLjA2My0xLjM5MmMwLjEzOC0wLjA0OCwwLjkxMy0wLjMwNCwxLjY4OC0wLjMwNGMwLjIyMSwwLDAuNDE4LDAuMDIxLDAuNTksMC4wNjIKCWMxLjE1OCwwLjI3NSw5LjQyNCw0LjkxMSwxMC4xNzIsNS43MDZDMzUuMDM2LDI0LjY0NCwzNS43ODMsMjYuODYyLDM1LjY3MSwyOS4xNCIvPgo8cmVjdCB4PSIyMS40MjUiIGZpbGw9IiNFQTMxNDQiIHdpZHRoPSIyLjg0MSIgaGVpZ2h0PSIxMS4xNzMiLz4KPHBhdGggZmlsbD0iI0VBMzE0NCIgZD0iTTI5LjY0MywxMi41MzRsLTIuNDk2LTEuMzU2bDUuMzM2LTkuODE3bDIuNDk2LDEuMzU2TDI5LjY0MywxMi41MzR6IE0xNS44NDksMTIuNTM0bC01LjMzNS05LjgxNwoJbDIuNDk2LTEuMzU2bDUuMzM1LDkuODE3TDE1Ljg0OSwxMi41MzR6Ii8+Cjwvc3ZnPg==');
@@ -1859,24 +1868,14 @@ Media
 		left:20%;
 	}
 	
-	.title {
-		font-size:25px;
-	}
-	.title,
-	.small-caps.grey {
-		display:block;
-		text-align: center;
-	}
-	.small-caps.grey.fright {
-		float:none;
-		display:block;
-		text-align: center;
+	.single-post header section {
+		max-width:300px;
 	}
 
 }/*/mediaquery*/
 
 /* Smaller */
-@media (max-width: 450px) {
+@media (max-width: 500px) {
 
 	.hidden-xs {
 		display:none;
@@ -1898,20 +1897,6 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) 
 and (orientation : landscape) { 
 
-	.feature .overlay {
-		opacity:1; -moz-opacity:1; -khtml-opacity: 1;
-		filter: alpha(opacity=100);
-	}
-	.box .cover {
-		opacity: 1; -moz-opacity:1; -khtml-opacity: 1;
-		filter: alpha(opacity=100);
-	}
-	.menu-main li a {
-		padding:6px 3px;
-		}
-	.menu-main li {
-		letter-spacing: 2px;
-	}
 
 }/*/mediaquery*/
 
@@ -1962,47 +1947,6 @@ and (orientation : portrait) {
 	#logo {
 		position:absolute;
 		top:80px !important;
-	}
-
-	/* Sidebar */
-	.sidebar {
-		max-width:400px;
-		margin-left: auto;
-		margin-right:auto;
-	}
-
-/* Isotope */
-
-	#isotope {
-		padding:0;
-		width:768px;
-	}
-	.item {
-		margin:5px;
-	}
-	.item,
-	.text {
-		width:118px;
-		margin:5px;
-	}
-	.grid-sizer {
-		width:54px !important;
-		margin:5px;
-	}
-
-	/* Feature */
-	.postcard {
-		width:48%;
-	}
-	.feature {
-		width:64.666668%;
-	}
-	.feature .overlay {
-		left:20px;
-		right:20px;
-		bottom:20px;
-		opacity: 1; -moz-opacity:1; -khtml-opacity: 1;
-		filter: alpha(opacity=100);
 	}
 
 }/*/mediaquery*/
