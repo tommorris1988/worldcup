@@ -1799,15 +1799,16 @@ Media
 		
 	/* Global */
 	
-	.open .content-cover {
-		position:absolute;
-		top:0;
-		left:0;
-		right:0;
-		cursor:e-resize;
-		bottom:0;
-		background:transparent;
-		z-index:9999;
+	.content {
+		width:90%;
+	}
+
+	.content p {
+		font-size:1.3em;
+	}
+
+	.tooltip span {
+		display:none;
 	}
 
 	.page-title {

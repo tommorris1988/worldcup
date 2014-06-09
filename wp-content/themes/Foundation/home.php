@@ -61,7 +61,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
 
     $stage = get_field('knockout');
 
-    switch($stage[0]) {
+    switch($stage) {
         case '0':
         ?>
     
