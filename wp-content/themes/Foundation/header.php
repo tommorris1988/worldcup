@@ -65,8 +65,8 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 		<li id="team"><a class="cta grey close" href="#">Select Your Team</a></li>
 		<li id="logo"><a class="icon-logo" href="/">It's Kicking Off</a></li>
 		<li class="icon"><a href="<?php bloginfo('stylesheet_directory'); ?>/images/ItsKickingOff_Brazil_2014_World_Cup_Calendar.ics" class="cta grey icon-calendar">Calendar</a></li>
-		<li><a id="bookmarkme" href="#" rel="sidebar" title="Bookmark this Page" class="cta hidden-xs grey">Bookmark</a></li>
-		<li><a class="cta grey" href="#team">Share</a></li>
+		<li><a id="bookmarkme" href="#" rel="sidebar" title="Bookmark this Page" class="cta hidden-sm grey">Bookmark</a></li>
+		<li><a class="cta grey hidden-xs" href="#team">Share</a></li>
 		<li class="icon"><a href="<?php bloginfo('home'); ?>/info" class="cta grey icon-info">Info</a></li>
 	</ul>
 	<ul class="dates">
