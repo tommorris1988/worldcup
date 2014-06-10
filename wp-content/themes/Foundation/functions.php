@@ -18,6 +18,324 @@ function my_login_logo() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
+// Custom Fields
+if(function_exists("register_field_group"))
+{
+  register_field_group(array (
+    'id' => 'acf_features',
+    'title' => 'Features',
+    'fields' => array (
+      array (
+        'key' => 'field_53904edf2720a',
+        'label' => 'Features',
+        'name' => 'feature',
+        'type' => 'repeater',
+        'sub_fields' => array (
+          array (
+            'key' => 'field_53904f222720c',
+            'label' => 'Object',
+            'name' => 'object',
+            'type' => 'wysiwyg',
+            'instructions' => 'Maybe include an intro and video?',
+            'column_width' => '',
+            'default_value' => '',
+            'toolbar' => 'full',
+            'media_upload' => 'yes',
+          ),
+        ),
+        'row_min' => '',
+        'row_limit' => '',
+        'layout' => 'table',
+        'button_label' => 'Add Feature',
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'post',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'no_box',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+  register_field_group(array (
+    'id' => 'acf_groups',
+    'title' => 'Groups',
+    'fields' => array (
+      array (
+        'key' => 'field_538dcc9dd1be8',
+        'label' => 'Group',
+        'name' => 'group',
+        'type' => 'taxonomy',
+        'required' => 1,
+        'taxonomy' => 'groups',
+        'field_type' => 'select',
+        'allow_null' => 0,
+        'load_save_terms' => 0,
+        'return_format' => 'object',
+        'multiple' => 0,
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'ef_taxonomy',
+          'operator' => '==',
+          'value' => 'teams',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+      array (
+        array (
+          'param' => 'ef_taxonomy',
+          'operator' => '==',
+          'value' => 'temps',
+          'order_no' => 0,
+          'group_no' => 1,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'no_box',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+  register_field_group(array (
+    'id' => 'acf_knockout',
+    'title' => 'Knockout',
+    'fields' => array (
+      array (
+        'key' => 'field_5395be11db361',
+        'label' => 'Stage',
+        'name' => 'knockout',
+        'type' => 'checkbox',
+        'choices' => array (
+          'Round 16' => 'Round 16',
+          'Quarter Final' => 'Quarter Final',
+          'Semi-Final' => 'Semi-Final',
+          'Runner Up' => 'Runner Up',
+          'Final' => 'Final',
+        ),
+        'default_value' => '',
+        'layout' => 'vertical',
+      ),
+      array (
+        'key' => 'field_5395c5554494e',
+        'label' => 'Temps',
+        'name' => 'temps',
+        'type' => 'taxonomy',
+        'conditional_logic' => array (
+          'status' => 1,
+          'rules' => array (
+            array (
+              'field' => 'field_5395be11db361',
+              'operator' => '==',
+              'value' => 'Round 16',
+            ),
+            array (
+              'field' => 'field_5395be11db361',
+              'operator' => '==',
+              'value' => 'Final',
+            ),
+            array (
+              'field' => 'field_5395be11db361',
+              'operator' => '==',
+              'value' => 'Quarter Final',
+            ),
+            array (
+              'field' => 'field_5395be11db361',
+              'operator' => '==',
+              'value' => 'Semi-Final',
+            ),
+            array (
+              'field' => 'field_5395be11db361',
+              'operator' => '==',
+              'value' => 'Runner Up',
+            ),
+          ),
+          'allorany' => 'any',
+        ),
+        'taxonomy' => 'temps',
+        'field_type' => 'checkbox',
+        'allow_null' => 0,
+        'load_save_terms' => 0,
+        'return_format' => 'object',
+        'multiple' => 0,
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'post',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'side',
+      'layout' => 'no_box',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+  register_field_group(array (
+    'id' => 'acf_match-info',
+    'title' => 'Match Info',
+    'fields' => array (
+      array (
+        'key' => 'field_538db5a7650b6',
+        'label' => 'Teams',
+        'name' => 'teams',
+        'type' => 'taxonomy',
+        'taxonomy' => 'teams',
+        'field_type' => 'checkbox',
+        'allow_null' => 0,
+        'load_save_terms' => 1,
+        'return_format' => 'object',
+        'multiple' => 0,
+      ),
+      array (
+        'key' => 'field_538dfae98151c',
+        'label' => 'Score',
+        'name' => 'score_1',
+        'type' => 'number',
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+      array (
+        'key' => 'field_538dfbffeb030',
+        'label' => 'Score 2',
+        'name' => 'score_2',
+        'type' => 'number',
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+      array (
+        'key' => 'field_538f06eb727a5',
+        'label' => 'Venue',
+        'name' => 'venue',
+        'type' => 'text',
+        'required' => 1,
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'formatting' => 'none',
+        'maxlength' => '',
+      ),
+      array (
+        'key' => 'field_5396d8fc8f942',
+        'label' => 'Venue Link',
+        'name' => 'venue_link',
+        'type' => 'text',
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'formatting' => 'none',
+        'maxlength' => '',
+      ),
+      array (
+        'key' => 'field_5396dd89250ef',
+        'label' => 'Statistics',
+        'name' => 'statistics',
+        'type' => 'text',
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => 'http://',
+        'append' => '',
+        'formatting' => 'none',
+        'maxlength' => '',
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'post',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'acf_after_title',
+      'layout' => 'no_box',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+  register_field_group(array (
+    'id' => 'acf_points',
+    'title' => 'Points',
+    'fields' => array (
+      array (
+        'key' => 'field_5390968356269',
+        'label' => 'Points',
+        'name' => 'points',
+        'type' => 'number',
+        'instructions' => '3 Points for a win. 1 Point for a draw.',
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'min' => '',
+        'max' => '',
+        'step' => '',
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'ef_taxonomy',
+          'operator' => '==',
+          'value' => 'teams',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'no_box',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+}
+
+
 // Taxonomies
 add_action('init', 'cptui_register_my_taxes_teams');
 function cptui_register_my_taxes_teams() {
@@ -162,10 +480,6 @@ function revcon_change_post_object() {
 add_action( 'admin_menu', 'revcon_change_post_label' );
 add_action( 'init', 'revcon_change_post_object' );
 
-// Register Post Types
-
-// Taxonomies
-
 // Footer
 add_filter( 'admin_footer_text', 'my_admin_footer_text' );
 function my_admin_footer_text( $default_text ) {
@@ -307,6 +621,7 @@ add_filter('the_posts', 'show_future_posts');
 // Hide Admin Menus
 function remove_post_custom_fields() {
 	remove_meta_box( 'tagsdiv-teams' , 'post' , 'normal' );
+  remove_meta_box( 'tagsdiv-temps' , 'post' , 'normal' );
 	remove_meta_box( 'tagsdiv-post_tag' , 'post' , 'normal' );
 	remove_meta_box( 'tagsdiv-groups' , 'post' , 'normal' );
 	remove_meta_box( 'categorydiv' , 'post' , 'normal' );

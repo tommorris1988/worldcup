@@ -1230,6 +1230,13 @@ blockquote {
 	text-transform: capitalize;
 	letter-spacing: 1px;
 }
+.stats {
+	background-color:rgb(252,217,0);
+	padding:1em;
+}
+.stats h2 {
+	margin:0;
+}
 
 /****************************** 
 Page
