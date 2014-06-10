@@ -13,16 +13,11 @@ get_header();
 
 global $wp_query;
 
-$group = get_queried_object();
+$currentgroup = get_queried_object();
 
 $teams = get_terms('teams', array(
         'fields'=>'ids',
-        'hide_empty'=>0,
-        'meta_query' => array(
-            'key' => 'group',
-            'value' => $group->name,
-            'compare' => 'LIKE'
-        )
+        'hide_empty'=>0
     )
 );
 
@@ -34,19 +29,11 @@ $args = array(
     'post_type'=> 'post',
     'post_status' => array('future','publish'),
     'posts_per_page' => '-1',
-    'tax_query'=> array(
-        array(
-            'taxonomy'=> 'teams',
-            'field'=> 'term_id',
-            'terms'=> $teams
-            )
-        ),
     'order' => 'ASC'
 );
 
 $day_check = '';
 
-$day = get_the_date('j');
 
 $custom_posts = get_posts($args);
 
@@ -58,53 +45,147 @@ foreach($custom_posts as $post) : setup_postdata($post);
 
     $dayid = get_the_time('Fd');
 
+    if( date('Yz') == get_the_time('Yz') ) {
+        $dayid = 'today';
+    }
+
     if ($day != $day_check) {
+        
         if ($day_check != '') {
             echo '</ul>';
         }
-        echo '<ul id="'. $dayid .'" class="day '.$time.'">'; ?>
-        <li class="date"><span></span><?php echo the_time('D'); ?><h1><?php echo the_time('j'); ?></h1><?php echo the_time('F'); ?><span></span></li>
-    <?php }
+        
+        echo '<ul id="'. $dayid .'" class="day '.$time.'">';
+        
+        if( date('Yz') == get_the_time('Yz') ) { ?>
+            <li class="date"><span></span><?php echo 'Today' ?><span></span></li>
+        <?php } else { ?>
+            <li class="date"><span></span><?php echo the_time('D'); ?><h1><?php echo the_time('j'); ?></h1><?php echo the_time('M'); ?><span></span></li>
+        <?php 
+        };
+    }
 
-    $team = get_field('team_1');
-    $team2 = get_field('team_2'); ?>
-    
-        <li class="match">
+    $stage = get_field('knockout');
+
+    switch($stage[0]) {
+
+        case 'Round 16':
+        case 'Quarter Final':
+        case 'Semi-Final':
+        case 'Runner Up':
+        case 'Final':
+
+        if(get_field('teams')){
+            $temps = get_field('teams');
+        } else {
+            $temps = get_field('temps');
+        }
+
+        $group = get_field('group','teams_'.$temps[0]->term_id);
+
+        if( $group->slug == $currentgroup->slug ){
+
+        ?>
+
+        <li class="match<?php if('publish' == get_post_status()) { echo ' old'; } ?>">
 
             <a href="<?php the_permalink();?>">
 
-            	<div class="pitch">
+                <div class="pitch">
 
-                    <?php include("images/top-left.svg"); ?>
+                    <?php include("images/top-left.svg"); include("images/top-right.svg"); include("images/bottom-left.svg"); include("images/bottom-right.svg");
 
-                    <?php include("images/top-right.svg"); ?>
+                    if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; }
 
-                    <?php include("images/bottom-left.svg"); ?>
+                    $count=0;
 
-                    <?php include("images/bottom-right.svg"); ?>
+                    foreach( $temps as $temp ):
 
-            		<?php if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
-
-                    <p class="sub-head">Group <?php echo $groups->name; ?></p>
-                    
-                    <?php $i=0; 
-                    foreach( $teams as $team ): ?>
-                        <h1><?php echo $team->name; ?></h1>
-                    <?php
-                        if($i==1){} else { echo '<span>vs</span>'; }; 
-                        $i++; 
-                    endforeach; 
+                        if($count==0){
+                            echo '<p class="sub-head">'.$stage[0].'</p>';
+                            echo '<h1>'.$temp->name.'</h1>';
+                        } else {
+                            if(get_field('score_1')) {
+                                echo '<h1 class="score sub-head">'.get_field('score_1').'-'.get_field('score_2').'</h1>';
+                            } else {
+                                echo '<span>vs</span>';
+                            }
+                            echo '<h1>'.$temp->name.'</h1>';
+                        }
+                        
+                        $count++;
+                    endforeach;
                     ?>
 
-                	<span class="font-family-3"><?php the_time('g:i'); ?></span>
+                    <?php if(!get_field('score_1')) { ?>
+                       <span class="sub-head font-family-3"><?php the_time('H:i'); ?></span>
+                    <?php } ?>
 
-            	</div>
+                </div>
 
             </a>
 
         </li>
 
     <?php
+        }
+
+        break;
+        default:
+
+        $matches = get_field('teams');
+
+        $group = get_field('group','teams_'.$matches[0]->term_id);
+
+        if( $group->slug == $currentgroup->slug ){
+
+        ?>
+    
+        <li class="match<?php if('publish' == get_post_status()) { echo ' old'; } ?>">
+
+            <a href="<?php the_permalink();?>">
+
+                <div class="pitch">
+
+                    <?php include("images/top-left.svg"); include("images/top-right.svg"); include("images/bottom-left.svg"); include("images/bottom-right.svg");
+
+                    if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
+                    
+                    <?php $i=0;
+                    foreach( $matches as $match ):
+
+                        if($i==0){
+                            echo '<p class="sub-head">Group '.$group->name.'</p>';
+                            echo '<h1>'.$match->name.'</h1>';
+                        } else {
+                            if(get_field('score_1')) {
+                                echo '<h1 class="score sub-head">'.get_field('score_1').'-'.get_field('score_2').'</h1>';
+                            } else {
+                                echo '<span>vs</span>';
+                            }
+                            echo '<h1>'.$match->name.'</h1>';
+                        }
+                        $i++;
+
+                    endforeach;
+                    ?>
+
+                    <?php if(!get_field('score_1')) { ?>
+                        <span class="sub-head font-family-3"><?php the_time('H:i'); ?></span>
+                    <?php } ?>
+
+                </div>
+
+            </a>
+
+        </li>
+
+    <?php
+        }
+
+        break;
+    }
+
     $count++;
 
     $day_check = $day;

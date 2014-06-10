@@ -65,6 +65,12 @@ foreach($custom_posts as $post) : setup_postdata($post);
         case 'Runner Up':
         case 'Final':
 
+        if(get_field('teams')){
+            $temps = get_field('teams');
+        } else {
+            $temps = get_field('temps');
+        }
+
         ?>
 
         <li class="match<?php if('publish' == get_post_status()) { echo ' old'; } ?>">
@@ -76,8 +82,6 @@ foreach($custom_posts as $post) : setup_postdata($post);
                     <?php include("images/top-left.svg"); include("images/top-right.svg"); include("images/bottom-left.svg"); include("images/bottom-right.svg");
 
                     if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; }
-                    
-                    $temps = get_field('temps');
 
                     $count=0;
 
@@ -87,7 +91,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
                             echo '<p class="sub-head">'.$stage[0].'</p>';
                             echo '<h1>'.$temp->name.'</h1>';
                         } else {
-                            if('publish' == get_post_status()) {
+                            if(get_field('score_1')) {
                                 echo '<h1 class="score sub-head">'.get_field('score_1').'-'.get_field('score_2').'</h1>';
                             } else {
                                 echo '<span>vs</span>';
@@ -99,7 +103,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
                     endforeach;
                     ?>
 
-                    <?php if('future' == get_post_status()) { ?>
+                    <?php if(!get_field('score_1')) { ?>
                        <span class="sub-head font-family-3"><?php the_time('H:i'); ?></span>
                     <?php } ?>
 
@@ -136,7 +140,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
                             echo '<p class="sub-head">Group '.$group->name.'</p>';
                             echo '<h1>'.$match->name.'</h1>';
                         } else {
-                            if('publish' == get_post_status()) {
+                            if(get_field('score_1')) {
                                 echo '<h1 class="score sub-head">'.get_field('score_1').'-'.get_field('score_2').'</h1>';
                             } else {
                                 echo '<span>vs</span>';
@@ -148,7 +152,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
                     endforeach;
                     ?>
 
-                    <?php if('future' == get_post_status()) { ?>
+                    <?php if(!get_field('score_1')) { ?>
                         <span class="sub-head font-family-3"><?php the_time('H:i'); ?></span>
                     <?php } ?>
 
