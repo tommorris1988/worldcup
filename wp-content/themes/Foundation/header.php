@@ -36,10 +36,8 @@ WebFontConfig = { fontdeck: { id: '25706' } };
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-50754720-1', 'itskickingoff.com');
   ga('send', 'pageview');
-
 </script>
 
 <!--[if IE 7]>
@@ -54,11 +52,14 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 
 <body <?php body_class(); ?> >
 
-<?php if(is_single() || is_page() || is_404()) {} else { ?>
+<?php if(is_single() || is_page() || is_404()) {} else {
 
-<?php get_template_part('landing'); ?>
+	if(is_home()) { 
+		get_template_part('landing');
+		get_template_part('helper');
+	} 
 
-<?php get_template_part('helper'); ?>
+	?>
 
 <nav class="clearfix">
 	<ul class="menu">
@@ -109,6 +110,6 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 	</ul>
 </nav>
 
-<?php get_template_part('teams'); ?>
+<?php get_template_part('teams');
 
-<?php } ?>
+} ?>
