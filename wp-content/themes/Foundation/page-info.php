@@ -24,7 +24,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <ul class="social bar">
                 <li><a class="icon icon-twitter" rel="nofollow" href="https://twitter.com/FiascoDesign" title="Twitter" target="_blank">Twitter</a></li>
                 <li><a class="icon icon-facebook" rel="nofollow" href="https://www.facebook.com/fiascodesign" title="Facebook" target="_blank">Facebook</a></li>
-                <li><a class="icon icon-email" href="mailto:info@fiascodesign.co.uk" target="_blank" title="Send us an E-Mail">Email</a></li>
+                <li><a class="icon icon-email" href="mailto:hello@fiascodesign.co.uk" target="_blank" title="Send us an E-Mail">Email</a></li>
             </ul>
 
         <?php else :

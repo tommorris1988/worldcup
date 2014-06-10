@@ -3,24 +3,6 @@ $(window).load(function() {
     $('html, body').animate({ scrollTop: $('#today').offset().top - 110},1);
 });
 
-// Mobile Menu
-$('.mobile-menu-icon, .content-cover').click(function ( event ) {
-  event.preventDefault();
-  $('body').toggleClass('open');
-});
-
-// Pull Down Menu
-$('.tab').click(function ( event ) {
-    event.preventDefault();
-    $('body').toggleClass('open-tray');
-});
-
-// Secondary menu
-$('.sticky-mobile').click(function ( event ) {
-    event.preventDefault();
-    $('#side-nav').toggleClass('drop-down');
-});
-
 // Close
 $('.close').click(function ( event ) {
     event.preventDefault();
