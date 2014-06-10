@@ -1692,7 +1692,9 @@ Media
 /* Large desktop */
 @media (min-width: 1200px) {
 
-	
+	#helper {
+		background-size:auto;
+	}
 	
 }/*/mediaquery*/
 
@@ -1705,22 +1707,9 @@ Media
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 1200px) {
-	
-	.menu-main li a {
-		padding:10px 10px;
-		}
-	.menu-main li {
-		letter-spacing: 2px;
-	}
-	.flex-direction-nav .flex-next {
-		right:-58px;
-	}
-	.flex-direction-nav .flex-prev {
-		left:-58px;
-	}
 
-	.category .end {
-		clear:both;
+	#helper {
+		background-size: 80% auto;
 	}
 
 }/*/mediaquery*/

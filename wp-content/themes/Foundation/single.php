@@ -49,7 +49,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 		<?php endif; ?>
 		<div class="details bar">
 			<ul>
-				<li><a class="icon-calendar-white tooltip" href="<?php echo bloginfo('home'); echo '/#'; echo the_time('Fj'); ?>"><span>Date of Match</span><?php the_time('jS F'); ?></a></li>
+				<li><a class="icon-calendar-white tooltip" href="<?php echo bloginfo('home'); echo '/#'; echo the_time('Fd'); ?>"><span>Date of Match</span><?php the_time('jS F'); ?></a></li>
 				<li class="venue"><a class="icon-pitch tooltip" target="_blank" href="<?php if($map){ echo $map; } else { echo '#'; } ?>"><span>Match Venue</span><?php if(get_field('venue')){ the_field('venue'); } else {echo 'To be Confirmed';} ?></a></li>
 				<li class="text-right"><a class="icon-whistle tooltip" href="#"><span>Kick Off Time</span><?php the_time('H:i'); ?></a></li>
 			</ul>

@@ -113,7 +113,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
         break;
         default:
 
-        $teams = get_field('teams');
+        $matches = get_field('teams');
 
         ?>
     
@@ -128,20 +128,20 @@ foreach($custom_posts as $post) : setup_postdata($post);
                     if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
                     
                     <?php $i=0;
-                    foreach( $teams as $team ):
+                    foreach( $matches as $match ):
 
-                        $group = get_field('group','teams_'.$team->term_id);
+                        $group = get_field('group','teams_'.$match->term_id);
 
                         if($i==0){
                             echo '<p class="sub-head">Group '.$group->name.'</p>';
-                            echo '<h1>'.$team->name.'</h1>';
+                            echo '<h1>'.$match->name.'</h1>';
                         } else {
                             if('publish' == get_post_status()) {
                                 echo '<h1 class="score sub-head">'.get_field('score_1').'-'.get_field('score_2').'</h1>';
                             } else {
                                 echo '<span>vs</span>';
                             }
-                            echo '<h1>'.$team->name.'</h1>';
+                            echo '<h1>'.$match->name.'</h1>';
                         }
                         $i++;
 
