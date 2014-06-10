@@ -9,7 +9,7 @@
 
         if ( $page ) {
             $content = apply_filters('the_content', $page[0]->post_content);
-            echo $content;
+            echo $content.'<br />';
             echo '<a class="cta wide close-landing" href="#">Let\'s Play</a>';
         } else {
             echo '<p class="center">Sorry, this page is under construction..</p>';

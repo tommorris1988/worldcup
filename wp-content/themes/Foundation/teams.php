@@ -1,5 +1,6 @@
 <header id="header" class="fader">
 <?php 
+
 $teams = get_terms('teams', array(
         'fields'=>'all',
         'hide_empty'=>0,
@@ -7,9 +8,10 @@ $teams = get_terms('teams', array(
     )
 );
 
-if(is_tax()) { 
+if(is_tax()) {
 	$current = get_queried_object()->term_id;
 }
+
 ?>
 	<nav>
 		<a class="button pull-left left close" href="#">Back</a>
@@ -24,7 +26,7 @@ if(is_tax()) {
 			$points = get_field('points','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'A': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
+					<li><a <?php if($current == $team->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
 					<?php
 						break;
 				} ?>
@@ -42,7 +44,7 @@ if(is_tax()) {
 			$points = get_field('points','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'B': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
+					<li><a <?php if($current == $team->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
 					<?php
 						break;
 				} ?>
@@ -60,7 +62,7 @@ if(is_tax()) {
 			$points = get_field('points','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'C': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
+					<li><a <?php if($current == $team->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
 					<?php
 						break;
 				} ?>
@@ -78,7 +80,7 @@ if(is_tax()) {
 			$points = get_field('points','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'D': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
+					<li><a <?php if($current == $team->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
 					<?php
 						break;
 				} ?>
@@ -96,7 +98,7 @@ if(is_tax()) {
 			$points = get_field('points','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'E': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
+					<li><a <?php if($current == $team->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
 					<?php
 						break;
 				} ?>
@@ -114,7 +116,7 @@ if(is_tax()) {
 			$points = get_field('points','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'F': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
+					<li><a <?php if($current == $team->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
 					<?php
 						break;
 				} ?>
@@ -132,7 +134,7 @@ if(is_tax()) {
 			$points = get_field('points','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'G': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
+					<li><a <?php if($current == $team->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
 					<?php
 						break;
 				} ?>
@@ -150,7 +152,7 @@ if(is_tax()) {
 			$points = get_field('points','teams_'.$team->term_id);
 				switch ($group->name) {
 					case 'H': ?>
-					<li><a <?php if($current == $term->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
+					<li><a <?php if($current == $team->term_id){echo 'class="current"';}?> href="<?php echo get_term_link($team); ?>"><?php echo $team->name; ?><span>(<?php if($points){ echo $points; } else { echo '0'; } ?>)</span></a></li>
 					<?php
 						break;
 				} ?>

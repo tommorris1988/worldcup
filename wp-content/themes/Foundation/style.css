@@ -64,7 +64,6 @@ Author: Thomas Morris
 	background-repeat: no-repeat;
 	background-size:100% auto;
 }
-
 .icon-whistle-red {
 	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE1LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIzOC4xNnB4IiBoZWlnaHQ9IjQwLjIwOXB4IiB2aWV3Qm94PSIwIDAgMzguMTYgNDAuMjA5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzOC4xNiA0MC4yMDkiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsPSIjRUEzMTQ0IiBkPSJNMzUuNTMzLDIxLjM4NUwzNS41MzMsMjEuMzg1bC0wLjcyOS0wLjY1M2MtMi4zMzYtMS43NDItOS40NjgtNS42MjktMTAuODM0LTUuOTU1CgljLTAuMzU0LTAuMDg1LTAuNzQ0LTAuMTI3LTEuMTU2LTAuMTI3Yy0xLjM0NywwLTIuNTY3LDAuNDYtMi42NjIsMC40OTdMMCwyNC4zMDh2NC4wMjhsMTAuNzA1LDguMDYzbDUuODg1LTIuMTA0CgljMS45MzEsMy40NjEsNS41MSw1LjcwMyw5LjQ4OSw1Ljg5OGMwLjE5LDAuMDEsMC4zODMsMC4wMTUsMC41NzMsMC4wMTVjNi4xNDIsMCwxMS4xODktNC44MSwxMS40OTItMTAuOTQ2CglDMzguMjg4LDI2LjQwMSwzNy4zNTksMjMuNjA0LDM1LjUzMywyMS4zODUgTTM1LjY3MSwyOS4xNGMtMC4yNDUsNC45NjktNC40MjUsOC44MzQtOS40NzEsOC41OAoJYy0zLjIzOC0wLjE2LTYuMTUyLTIuMDU1LTcuNjIxLTQuOTUxbC0wLjU3NS0xLjYwOWwtNi44NzUsMi40NThsLTguNjUxLTYuNTE3di0xLjE5N2wxMi41My01LjY5Nmw4LjcxMyw1Ljc4OWwzLjA2NS0xLjQ2OAoJbC04LjczMS01LjcwNmwzLjA2My0xLjM5MmMwLjEzOC0wLjA0OCwwLjkxMy0wLjMwNCwxLjY4OC0wLjMwNGMwLjIyMSwwLDAuNDE4LDAuMDIxLDAuNTksMC4wNjIKCWMxLjE1OCwwLjI3NSw5LjQyNCw0LjkxMSwxMC4xNzIsNS43MDZDMzUuMDM2LDI0LjY0NCwzNS43ODMsMjYuODYyLDM1LjY3MSwyOS4xNCIvPgo8cmVjdCB4PSIyMS40MjUiIGZpbGw9IiNFQTMxNDQiIHdpZHRoPSIyLjg0MSIgaGVpZ2h0PSIxMS4xNzMiLz4KPHBhdGggZmlsbD0iI0VBMzE0NCIgZD0iTTI5LjY0MywxMi41MzRsLTIuNDk2LTEuMzU2bDUuMzM2LTkuODE3bDIuNDk2LDEuMzU2TDI5LjY0MywxMi41MzR6IE0xNS44NDksMTIuNTM0bC01LjMzNS05LjgxNwoJbDIuNDk2LTEuMzU2bDUuMzM1LDkuODE3TDE1Ljg0OSwxMi41MzR6Ii8+Cjwvc3ZnPg==');
 	background-repeat: no-repeat;
@@ -441,16 +440,11 @@ header {
 	padding:10% 5%;
 }
 #header section {
-	float:left;
-	width:25%;
-	height:45%;
 	color:rgb(59,156,62);
-	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
-	display:flex;
 }
 header ul {
 	position:relative;
-	margin:auto 1em auto 6em;
+	margin:auto 1em auto 1em;
 	padding-left:0.3em;
 	height:auto;
 }
@@ -468,15 +462,12 @@ header li {
 }
 header .letter {
 	font-family: 'machine_btregular', 'bebas_neueregular', 'bebas-neue', 'Helvetica Neue', Helvetica, sans-serif;
-	font-size:12.5em;
-	position:absolute;
-	right:100%;
+	font-size:5.5em;
 	color:rgb(59,156,62);
-	text-align:right;
-	line-height:0.52em;
 }
 header ul li a:hover,
-header .letter a:hover {
+header .letter a:hover,
+.tax-teams header ul li .current {
 	color:#ffffff;
 }
 #header li span {
@@ -486,6 +477,9 @@ header .letter a:hover {
 	vertical-align: middle;
 	color:rgb(59,156,62);
 	margin-left:5px;
+}
+.tax-teams header ul li {
+	color:rgb(59,156,62);
 }
 
 header nav {
@@ -636,6 +630,25 @@ Global
 
 nav .cta {
 	font-size:1.4em;
+}
+nav li ul {
+	display:inline;
+}
+nav li li {
+	display:inline;
+	margin-left:0;
+}
+nav li li a {
+	border-left:0 !important;
+	margin-left:-0.2em;
+}
+nav li li .icon {
+	text-indent: -999999px;
+	background-position:center center;
+	background-size:auto 50%;
+}
+nav li li .icon-twitter {
+
 }
 
 .cta.grey {
@@ -1022,6 +1035,9 @@ header .vs {
 header .details {
 	position:relative;
 	z-index:8;
+}
+header .details .text-right a {
+	cursor:default;
 }
 header .is-sticky .details {
 	width:100%;
@@ -1678,7 +1694,14 @@ Media
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) {
 
-	
+	#header section {
+		float:left;
+		width:25%;
+		height:45%;
+		color:rgb(59,156,62);
+		display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+		display:flex;
+	}
 				
 }/*/mediaquery*/
 
@@ -1694,6 +1717,19 @@ Media
 
 	#helper {
 		background-size:auto;
+	}
+	header ul {
+		max-height:100px;
+		margin:auto 1em auto 6em;
+	}
+	header li {
+		font-size:2.5em;
+	}
+	header .letter {
+		font-size:12.5em;
+		position:absolute;
+		right:100%;
+		line-height:0.52em;
 	}
 	
 }/*/mediaquery*/
@@ -1805,6 +1841,14 @@ Media
 	}
 	nav .dates li a.header {
 		font-size:20px;
+	}
+
+	/* Header */
+	#header section {
+		display:inline-block;
+		float:left;
+		min-width:45%;
+		max-width:45%;
 	}
 		
 	/* Global */

@@ -67,7 +67,13 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 		<li id="logo"><a class="icon-logo" href="/">It's Kicking Off</a></li>
 		<li class="icon"><a href="<?php bloginfo('stylesheet_directory'); ?>/images/ItsKickingOff_Brazil_2014_World_Cup_Calendar.ics" class="cta grey icon-calendar">Calendar</a></li>
 		<li><a id="bookmarkme" href="#" rel="sidebar" title="Bookmark this Page" class="cta hidden-sm grey">Bookmark</a></li>
-		<li><a class="cta grey hidden-xs" href="#team">Share</a></li>
+		<li>
+			<a class="cta grey hidden-xs" href="#team">Share</a>
+			<ul>
+				<li><a class="cta grey icon icon-twitter" rel="nofollow" href="http://twitter.com/home?status=<?php echo the_permalink(); echo urlencode(" #itskickingoff");?>&text=<?php the_title(); ?>" title="Tweet This" target="_blank">Twitter</a></li>
+				<li><a class="cta grey icon icon-facebook" rel="nofollow" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php echo urlencode(get_the_title($id)); ?>" title="Share this post on Facebook" target="_blank">Facebook</a></li>
+			</ul>
+		</li>
 		<li class="icon"><a href="<?php bloginfo('home'); ?>/info" class="cta grey icon-info">Info</a></li>
 	</ul>
 	<ul class="dates">
