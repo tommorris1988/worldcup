@@ -2,7 +2,8 @@
 <?php 
 $teams = get_terms('teams', array(
         'fields'=>'all',
-        'hide_empty'=>0
+        'hide_empty'=>0,
+        'orderby'=>'custom_sort'
     )
 );
 
