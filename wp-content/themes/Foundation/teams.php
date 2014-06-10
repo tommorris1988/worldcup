@@ -15,7 +15,7 @@ if(is_tax()) {
 ?>
 	<nav>
 		<a class="button pull-left left close" href="#">Back</a>
-		<h1 class="title">Select Your Team / Group</h1>
+		<h1 class="title"><span>Select Your </span>Team / Group</h1>
 	</nav>
 
 	<section>

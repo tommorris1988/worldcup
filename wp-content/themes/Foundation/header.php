@@ -63,12 +63,12 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 
 <nav class="clearfix">
 	<ul class="menu">
-		<li id="team"><a class="cta grey close" href="#">Select Your Team</a></li>
+		<li id="team"><a class="cta grey close" href="#"><span>Select </span>Your Team</a></li>
 		<li id="logo"><a class="icon-logo" href="/">It's Kicking Off</a></li>
-		<li class="icon"><a href="<?php bloginfo('stylesheet_directory'); ?>/images/ItsKickingOff_Brazil_2014_World_Cup_Calendar.ics" class="cta grey icon-calendar">Calendar</a></li>
+		<li class="icon"><a class="cta grey icon-calendar hidden-xs" href="<?php bloginfo('stylesheet_directory'); ?>/images/ItsKickingOff_Brazil_2014_World_Cup_Calendar.ics">Calendar</a></li>
 		<li><a id="bookmarkme" href="#" rel="sidebar" title="Bookmark this Page" class="cta hidden-sm grey">Bookmark</a></li>
 		<li>
-			<a class="cta grey hidden-xs" href="#team">Share</a>
+			<a class="cta grey" href="#team">Share</a>
 			<ul>
 				<li><a class="cta grey icon icon-twitter" rel="nofollow" href="http://twitter.com/home?status=<?php echo bloginfo('home'); echo urlencode(" #itskickingoff");?>&text=<?php the_title(); ?>" title="Tweet This" target="_blank">Twitter</a></li>
 				<li><a class="cta grey icon icon-facebook" rel="nofollow" href="http://www.facebook.com/sharer.php?u=<?php echo bloginfo('home'); ?>&amp;t=<?php echo urlencode(get_the_title($id)); ?>" title="Share this on Facebook" target="_blank">Facebook</a></li>

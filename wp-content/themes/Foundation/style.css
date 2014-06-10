@@ -1766,7 +1766,7 @@ Media
 	nav .dates li a {
 		padding:1% 0;
 	}
-	
+
 	nav .dates .header {
 		padding:0.3% 0;
 	}
@@ -1821,7 +1821,6 @@ Media
 
 @media (min-width: 768px) and (max-width: 992px) { 
 
-	.bug,
 	.hidden-small {
 		display:none !important;
 		}
@@ -1913,12 +1912,28 @@ Media
 	}
 
 	/* Header */
+	#header {
+		overflow:auto;
+		padding-top:8em;
+	}
+	#header nav {
+		position:fixed;
+	}
+	#header nav h1 {
+		font-size:2em;
+	}
 	#header section {
 		display:inline-block;
 		float:left;
-		min-width:45%;
-		max-width:45%;
+		width:100%;
 	}
+	#header .button.bar {
+		position:static;
+		margin-top:2em;
+		float:left;
+		clear:both;
+	}
+
 		
 	/* Global */
 	
@@ -1939,12 +1954,10 @@ Media
 	}
 	
 	/* Hiding */
-	.bug,
 	.hidden-sm,
-	.post-edit-link,
 	.hidden-mob,
-	.section .title,
-	#landscape .logo {
+	#header nav h1 span,
+	nav #team span {
 		display:none !important;
 	}
 
@@ -1964,26 +1977,26 @@ Media
 		
 	/* Menus */
 
-	#nav-sticky-wrapper {
+	#undefined-sticky-wrapper {
 		height:auto !important;
 	}
-	.is-sticky #nav {
-		position:fixed !important;
-	}
-
-	#side-nav-sticky-wrapper {
-		height:auto !important;
-	}
-	.is-sticky #side-nav {
+	#undefined-sticky-wrapper .bar {
 		position:static !important;
 	}
 
 	.open #nav {
 		left:20%;
 	}
+	.single-post header nav {
+		background-color:rgb(59,156,62);
+	}
 	
 	.single-post header section {
 		max-width:300px;
+		padding:8em 0 3em 0;
+	}
+	header .scores h1 {
+		font-size:3.2em;
 	}
 
 }/*/mediaquery*/
@@ -1991,17 +2004,31 @@ Media
 /* Smaller */
 @media (max-width: 500px) {
 
+	#logo,
 	.hidden-xs {
-		display:none;
+		display:none !important;
 	}
-
-}/*/mediaquery*/
-
-/* Tablet and down */
-@media (max-height: 600px) { 
-
-	.menu-main li a {
-		padding:0.4em 1.2em;
+	nav .menu li {
+		position:relative;
+		overflow:visible;
+	}
+	nav li ul {
+		position:absolute;
+		right:0;
+		top:99%;
+		z-index:99;
+	}
+	header .bar ul {
+		display:block;
+	}
+	header .bar ul li {
+		display:block;
+		text-align: center;
+	}
+	header .bar ul .venue {
+		border:0;
+		border-top:1px solid rgb(68,181,72);
+		border-bottom:1px solid rgb(68,181,72);
 	}
 
 }/*/mediaquery*/
