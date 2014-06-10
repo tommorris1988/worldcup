@@ -55,16 +55,18 @@ foreach($custom_posts as $post) : setup_postdata($post);
         };
     }
 
-    $teams = get_field('teams');
-
-    $groups = get_field('group','teams_'.$teams[0]->term_id);
-
     $stage = get_field('knockout');
 
-    switch($stage) {
-        case '0':
+    switch($stage[0]) {
+
+        case 'Round 16':
+        case 'Quarter Final':
+        case 'Semi-Final':
+        case 'Runner Up':
+        case 'Final':
+
         ?>
-    
+
         <li class="match<?php if('publish' == get_post_status()) { echo ' old'; } ?>">
 
             <a href="<?php the_permalink();?>">
@@ -73,22 +75,27 @@ foreach($custom_posts as $post) : setup_postdata($post);
 
                     <?php include("images/top-left.svg"); include("images/top-right.svg"); include("images/bottom-left.svg"); include("images/bottom-right.svg");
 
-                    if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
-
-                    <p class="sub-head">Group <?php echo $groups->name; ?></p>
+                    if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; }
                     
-                    <?php $i=0;
-                    foreach( $teams as $team ):
-                        echo '<h1>'.$team->name.'</h1>';
+                    $temps = get_field('temps');
 
-                        if($i==1){} else {
+                    $count=0;
+
+                    foreach( $temps as $temp ):
+
+                        if($count==0){
+                            echo '<p class="sub-head">'.$stage[0].'</p>';
+                            echo '<h1>'.$temp->name.'</h1>';
+                        } else {
                             if('publish' == get_post_status()) {
                                 echo '<h1 class="score sub-head">'.get_field('score_1').'-'.get_field('score_2').'</h1>';
                             } else {
                                 echo '<span>vs</span>';
                             }
+                            echo '<h1>'.$temp->name.'</h1>';
                         }
-                        $i++;
+                        
+                        $count++;
                     endforeach;
                     ?>
 
@@ -106,12 +113,10 @@ foreach($custom_posts as $post) : setup_postdata($post);
         break;
         default:
 
-        if(!$teams) {
-            $teams = get_field('temps');
-        }
+        $teams = get_field('teams');
 
         ?>
-
+    
         <li class="match<?php if('publish' == get_post_status()) { echo ' old'; } ?>">
 
             <a href="<?php the_permalink();?>">
@@ -124,11 +129,11 @@ foreach($custom_posts as $post) : setup_postdata($post);
                     
                     <?php $i=0;
                     foreach( $teams as $team ):
-                    
-                        $groups = get_field('group','temps_'.$team->term_id);
+
+                        $group = get_field('group','teams_'.$team->term_id);
 
                         if($i==0){
-                            echo '<p class="sub-head">'.$stage[0].'</p>';
+                            echo '<p class="sub-head">Group '.$group->name.'</p>';
                             echo '<h1>'.$team->name.'</h1>';
                         } else {
                             if('publish' == get_post_status()) {
@@ -138,13 +143,13 @@ foreach($custom_posts as $post) : setup_postdata($post);
                             }
                             echo '<h1>'.$team->name.'</h1>';
                         }
-                        
                         $i++;
+
                     endforeach;
                     ?>
 
                     <?php if('future' == get_post_status()) { ?>
-                       <span class="sub-head font-family-3"><?php the_time('H:i'); ?></span>
+                        <span class="sub-head font-family-3"><?php the_time('H:i'); ?></span>
                     <?php } ?>
 
                 </div>

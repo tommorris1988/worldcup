@@ -391,29 +391,30 @@ array( 'hierarchical' => false,
 }
 add_action('init', 'cptui_register_my_taxes_temps');
 function cptui_register_my_taxes_temps() {
-register_taxonomy( 'temps',array (
-  0 => 'post',
-),
-array( 'hierarchical' => false,
-  'label' => 'Temps',
-  'show_ui' => true,
-  'query_var' => true,
-  'show_admin_column' => false,
-  'labels' => array (
-  'search_items' => 'Temp',
-  'popular_items' => '',
-  'all_items' => '',
-  'parent_item' => '',
-  'parent_item_colon' => '',
-  'edit_item' => '',
-  'update_item' => 'Update Temp',
-  'add_new_item' => '',
-  'new_item_name' => '',
-  'separate_items_with_commas' => '',
-  'add_or_remove_items' => '',
-  'choose_from_most_used' => '',
-)
-) ); 
+  register_taxonomy( 'temps',array (
+      0 => 'post',
+    ),
+    array( 'hierarchical' => false,
+      'label' => 'Temps',
+      'show_ui' => true,
+      'query_var' => true,
+      'show_admin_column' => false,
+        'labels' => array (
+        'search_items' => 'Temp',
+        'popular_items' => '',
+        'all_items' => '',
+        'parent_item' => '',
+        'parent_item_colon' => '',
+        'edit_item' => '',
+        'update_item' => 'Update Temp',
+        'add_new_item' => '',
+        'new_item_name' => '',
+        'separate_items_with_commas' => '',
+        'add_or_remove_items' => '',
+        'choose_from_most_used' => '',
+        )
+    ) 
+  );
 }
 
 // Admin Menu
