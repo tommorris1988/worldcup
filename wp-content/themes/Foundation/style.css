@@ -1092,7 +1092,7 @@ header .bar ul li .corner {
 	float:left;
 }
 
-article.content a {
+.single article.content a {
 	color:rgb(95,122,126);
 	border-bottom:1px solid rgb(168,181,183);
 }
