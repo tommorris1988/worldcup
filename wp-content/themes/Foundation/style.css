@@ -323,7 +323,7 @@ nav li {
 	display:inline-block;
 	text-align: left;
 	vertical-align: top;
-	height:1em;
+	overflow:hidden;
 	margin:0;
 }
 
@@ -344,6 +344,7 @@ nav #logo {
 	position:absolute;
 	left:50%;
 	margin-left:-130px;
+	height:auto;
 }
 
 nav #team {
@@ -631,24 +632,36 @@ Global
 nav .cta {
 	font-size:1.4em;
 }
+nav .menu li {
+	height:100%;
+	overflow:hidden;
+}
 nav li ul {
-	display:inline;
+	display:inline-block;
+	vertical-align:middle;
+	max-width:0px;
+	overflow:hidden;
+	height:110%;
+	margin-left:-0.3em;
 }
 nav li li {
 	display:inline;
-	margin-left:0;
+	height:100%;
 }
 nav li li a {
-	border-left:0 !important;
-	margin-left:-0.2em;
+	background-color:#a3a3a3 !important;
+	margin-right:-0.2em;
 }
 nav li li .icon {
-	text-indent: -999999px;
+	text-indent:-999999px;
 	background-position:center center;
 	background-size:auto 50%;
 }
-nav li li .icon-twitter {
-
+nav li li .icon:hover {
+	background-color:#aaa !important;
+}
+nav li:hover ul {
+	max-width:500px;
 }
 
 .cta.grey {
@@ -712,14 +725,14 @@ nav li li .icon-twitter {
 .day {
 	padding:3em;
 	margin:0;
-	text-align: center;
+	text-align:center;
 }
 
 .date {
 	display:block;
 	color:#ffffff;
 	text-transform:uppercase;
-	letter-spacing: 0.2em;
+	letter-spacing:0.2em;
 }
 .date * {
 	display:inline;
@@ -1575,6 +1588,14 @@ a {
     -moz-transition: background-color 0.3s ease;
     -o-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease;
+	}
+
+nav li ul,
+nav li:hover ul {
+	-webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 	}
 
 /****************************** 

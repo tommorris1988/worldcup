@@ -6,6 +6,8 @@
  */
 get_header();
 
+$the_query = new WP_Query( 'cat=1&paged=' . $paged ); 
+
 if ( have_posts() ) : while ( have_posts() ) : the_post();
 	$teams = get_field('teams');
 	if(!$teams) {
@@ -15,11 +17,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 
 	<header>
 		<nav>
-			<a class="button pull-left left" href="<?php bloginfo('home'); ?>">Back</a>
+			<a class="button pull-left left" href="<?php bloginfo('home'); ?>">Back Home</a>
 			<?php previous_post_link( '%link', 'Next Match', FALSE ); ?>
-			<!--<?php $link = get_adjacent_post( true, '', false ); ?>
-			<a class="button pull-right right" href="<?php echo $link->guid; ?>">Next Match</a>-->
-
 		</nav>
 		<?php $score1 = get_field('score_1');
 		$score2 = get_field('score_2');
