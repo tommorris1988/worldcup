@@ -445,6 +445,7 @@ header {
 	width:25%;
 	height:45%;
 	color:rgb(59,156,62);
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
 	display:flex;
 }
 header ul {
@@ -777,8 +778,11 @@ nav .cta {
 	overflow:hidden;
 	border:5px solid #ffffff;
 	padding:1em;
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
 	display:flex;
+	-webkit-flex-wrap:wrap;-moz-flex-wrap:wrap;-moz-flex-wrap:wrap;
 	flex-wrap:wrap;
+	-webkit-flex-direction:column;
 	flex-direction:column;
 }
 .pitch * {
@@ -1088,7 +1092,7 @@ header .bar ul li .corner {
 	float:left;
 }
 
-article .content a {
+article.content a {
 	color:rgb(95,122,126);
 	border-bottom:1px solid rgb(168,181,183);
 }
@@ -1101,7 +1105,7 @@ article .content a {
 	}
 .content a:active {
 	position:relative;
-	top:2px;
+	top:1px;
 	}
 
 .content .placeholder {
@@ -1233,6 +1237,7 @@ Page
 .page,
 .error404 {
 	background-color:rgb(68,181,72);
+	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
 	display:flex;
 	flex-wrap:wrap;
 	padding:5%;
