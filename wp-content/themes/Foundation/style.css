@@ -130,6 +130,11 @@ a {
 a:hover { 
 	text-decoration:none;
 }
+a:active,
+a:focus {
+	text-decoration: none;
+	outline:none;
+}
 li {
 	list-style:none;
 	display:inline;
@@ -719,11 +724,11 @@ nav li:hover ul {
 }
 
 .matches {
-	padding:7.5em 0 0 0;
+	padding:11em 0 0 0;
 }
 
 .day {
-	padding:3em;
+	padding:3em 1em;
 	margin:0;
 	text-align:center;
 }
@@ -741,7 +746,7 @@ nav li:hover ul {
 	padding:0 0.3em;
 }
 .date span {
-	width:80px;
+	width:40px;
 	height:2px;
 	margin:0 1em;
 	display:inline-block;
@@ -762,7 +767,7 @@ nav li:hover ul {
 	text-align: center;
 	width:23em;
 	height:0;
-	margin:2em 1em 0 1em;
+	margin:2em 0.5em 0 0.5em;
 }
 .match:hover {
 	background-color:rgba(255,255,255,0.2);
@@ -804,7 +809,7 @@ nav li:hover ul {
 	overflow:hidden;
 	border:5px solid #ffffff;
 	padding:1em;
-	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+	display: -webkit-box-flex;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
 	display:flex;
 	-webkit-flex-wrap:wrap;-moz-flex-wrap:wrap;-moz-flex-wrap:wrap;
 	flex-wrap:wrap;
@@ -818,9 +823,15 @@ nav li:hover ul {
 	letter-spacing:1px;
 	font-size:1.5em;
 }
+.no-flexbox .pitch * {
+	display:block;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
 .no-flexbox .pitch .sub-head.font-family-3 {
 	position:absolute;
 	bottom:0.5em;
+	width:100%;
 	left:0;
 	}
 .pitch svg {
@@ -829,6 +840,7 @@ nav li:hover ul {
 	height:10%;
 	max-width:30px;
 	max-height:30px;
+	margin:0 !important;
 }
 .top-left {
 	top:-1px;
@@ -1273,7 +1285,7 @@ Page
 .page,
 .error404 {
 	background-color:rgb(68,181,72);
-	display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+	display: -webkit-box-flex;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
 	display:flex;
 	flex-wrap:wrap;
 	padding:5%;
@@ -1333,6 +1345,17 @@ Info
 }
 .dark {
 	color:rgb(59,156,62);
+	border-color:rgb(59,156,62);
+}
+.dark a {
+	color:inherit;
+	border-color:inherit;
+}
+.bold {
+	font-weight:600;
+}
+.page .dark.sub-head {
+	letter-spacing: 0.1em;
 }
 ul.social {
 	width:100%;
@@ -1708,21 +1731,46 @@ Email
 }
 
 
-/****************************** 
+/******************************
 Media
 ******************************/
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) {
 
+	.matches {
+		padding:7.5em 0 0 0;
+	}
+
 	#header section {
 		float:left;
 		width:25%;
 		height:45%;
 		color:rgb(59,156,62);
-		display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
+		display: -webkit-box-flex;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;
 		display:flex;
 	}
+
+	.match {
+		margin:2em 1em 0 1em;
+	}
+
+	.day {
+		padding:3em;
+	}
+
+	.date span {
+		width:80px;
+	}
+
+	nav .dates li a {
+		padding:1% 0;
+	}
+	
+	nav .dates .header {
+		padding:0.3% 0;
+	}
+
 				
 }/*/mediaquery*/
 

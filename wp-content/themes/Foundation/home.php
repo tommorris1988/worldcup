@@ -73,7 +73,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
 
         ?>
 
-        <li class="match<?php if('publish' == get_post_status()) { echo ' old'; } ?>">
+        <li class="match<?php if(get_field('score_1')) { echo ' old'; } ?>">
 
             <a href="<?php the_permalink();?>">
 
@@ -81,7 +81,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
 
                     <?php include("images/top-left.svg"); include("images/top-right.svg"); include("images/bottom-left.svg"); include("images/bottom-right.svg");
 
-                    if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; }
+                    if(get_field('score_1')) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; }
 
                     $count=0;
 
@@ -121,7 +121,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
 
         ?>
     
-        <li class="match<?php if('publish' == get_post_status()) { echo ' old'; } ?>">
+        <li class="match<?php if(get_field('score_1')) { echo ' old'; } ?>">
 
             <a href="<?php the_permalink();?>">
 
@@ -129,7 +129,7 @@ foreach($custom_posts as $post) : setup_postdata($post);
 
                     <?php include("images/top-left.svg"); include("images/top-right.svg"); include("images/bottom-left.svg"); include("images/bottom-right.svg");
 
-                    if('publish' == get_post_status()) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
+                    if(get_field('score_1')) { echo '<span class="icon-whistle"></span>'; } else { echo '<span class="icon-football"></span>'; } ?>
                     
                     <?php $i=0;
                     foreach( $matches as $match ):

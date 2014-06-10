@@ -18,7 +18,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <span class="icon-info-white circle clearfix"></span>
         <?php 
         if($content = $post->post_content ) :
-            // echo '<span class="icon-logo-white"></span>';
+            
             the_content(); ?>
 
             <ul class="social bar">

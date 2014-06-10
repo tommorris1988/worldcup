@@ -70,8 +70,8 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 		<li>
 			<a class="cta grey hidden-xs" href="#team">Share</a>
 			<ul>
-				<li><a class="cta grey icon icon-twitter" rel="nofollow" href="http://twitter.com/home?status=<?php echo the_permalink(); echo urlencode(" #itskickingoff");?>&text=<?php the_title(); ?>" title="Tweet This" target="_blank">Twitter</a></li>
-				<li><a class="cta grey icon icon-facebook" rel="nofollow" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php echo urlencode(get_the_title($id)); ?>" title="Share this post on Facebook" target="_blank">Facebook</a></li>
+				<li><a class="cta grey icon icon-twitter" rel="nofollow" href="http://twitter.com/home?status=<?php echo bloginfo('home'); echo urlencode(" #itskickingoff");?>&text=<?php the_title(); ?>" title="Tweet This" target="_blank">Twitter</a></li>
+				<li><a class="cta grey icon icon-facebook" rel="nofollow" href="http://www.facebook.com/sharer.php?u=<?php echo bloginfo('home'); ?>&amp;t=<?php echo urlencode(get_the_title($id)); ?>" title="Share this on Facebook" target="_blank">Facebook</a></li>
 			</ul>
 		</li>
 		<li class="icon"><a href="<?php bloginfo('home'); ?>/info" class="cta grey icon-info">Info</a></li>
@@ -94,22 +94,15 @@ WebFontConfig = { fontdeck: { id: '25706' } };
 			<a href="#June24">24</a>
 			<a href="#June25">25</a>
 			<a href="#June26">26</a>
-			<a href="#June27">27</a>
 			<a href="#June28">28</a>
 			<a href="#June29">29</a>
 			<a href="#June30">30</a>
 			<a class="header" href="#July01">July</a>
 			<a href="#July01">01</a>
-			<a href="#July02">02</a>
-			<a href="#July03">03</a>
 			<a href="#July04">04</a>
 			<a href="#July05">05</a>
-			<a href="#July06">06</a>
-			<a href="#July07">07</a>
 			<a href="#July08">08</a>
 			<a href="#July09">09</a>
-			<a href="#July10">10</a>
-			<a href="#July11">11</a>
 			<a href="#July12">12</a>
 			<a href="#July13">13</a>
 		</li>
