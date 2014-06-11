@@ -20,7 +20,7 @@ if(is_tax()) {
 
 	<section>
 		<ul>
-			<li class="letter"><a href="<?php echo get_term_link(34,'groups'); ?>">A</a></li>
+			<li class="letter"><a href="<?php echo get_term_link(3,'groups'); ?>">A</a></li>
 			<?php foreach ($teams as $team):
 			$group = get_field('group','teams_'.$team->term_id);
 			$points = get_field('points','teams_'.$team->term_id);
@@ -38,7 +38,7 @@ if(is_tax()) {
 
 	<section>
 		<ul>
-			<li class="letter"><a href="<?php echo get_term_link(35,'groups'); ?>">B</a></li>
+			<li class="letter"><a href="<?php echo get_term_link(7,'groups'); ?>">B</a></li>
 			<?php foreach ($teams as $team):
 			$group = get_field('group','teams_'.$team->term_id);
 			$points = get_field('points','teams_'.$team->term_id);
@@ -56,7 +56,7 @@ if(is_tax()) {
 
 	<section>
 		<ul>
-			<li class="letter"><a href="<?php echo get_term_link(36,'groups'); ?>">C</a></li>
+			<li class="letter"><a href="<?php echo get_term_link(11,'groups'); ?>">C</a></li>
 			<?php foreach ($teams as $team):
 			$group = get_field('group','teams_'.$team->term_id);
 			$points = get_field('points','teams_'.$team->term_id);
@@ -74,7 +74,7 @@ if(is_tax()) {
 
 	<section>
 		<ul>
-			<li class="letter"><a href="<?php echo get_term_link(37,'groups'); ?>">D</a></li>
+			<li class="letter"><a href="<?php echo get_term_link(18,'groups'); ?>">D</a></li>
 			<?php foreach ($teams as $team):
 			$group = get_field('group','teams_'.$team->term_id);
 			$points = get_field('points','teams_'.$team->term_id);
@@ -92,7 +92,7 @@ if(is_tax()) {
 
 	<section>
 		<ul>
-			<li class="letter"><a href="<?php echo get_term_link(38,'groups'); ?>">E</a></li>
+			<li class="letter"><a href="<?php echo get_term_link(19,'groups'); ?>">E</a></li>
 			<?php foreach ($teams as $team):
 			$group = get_field('group','teams_'.$team->term_id);
 			$points = get_field('points','teams_'.$team->term_id);
@@ -110,7 +110,7 @@ if(is_tax()) {
 
 	<section>
 		<ul>
-			<li class="letter"><a href="<?php echo get_term_link(39,'groups'); ?>">F</a></li>
+			<li class="letter"><a href="<?php echo get_term_link(22,'groups'); ?>">F</a></li>
 			<?php foreach ($teams as $team):
 			$group = get_field('group','teams_'.$team->term_id);
 			$points = get_field('points','teams_'.$team->term_id);
@@ -128,7 +128,7 @@ if(is_tax()) {
 
 	<section>
 		<ul>
-			<li class="letter"><a href="<?php echo get_term_link(40,'groups'); ?>">G</a></li>
+			<li class="letter"><a href="<?php echo get_term_link(24,'groups'); ?>">G</a></li>
 			<?php foreach ($teams as $team):
 			$group = get_field('group','teams_'.$team->term_id);
 			$points = get_field('points','teams_'.$team->term_id);
@@ -146,7 +146,7 @@ if(is_tax()) {
 
 	<section>
 		<ul>
-			<li class="letter"><a href="<?php echo get_term_link(41,'groups'); ?>">H</a></li>
+			<li class="letter"><a href="<?php echo get_term_link(28,'groups'); ?>">H</a></li>
 			<?php foreach ($teams as $team):
 			$group = get_field('group','teams_'.$team->term_id);
 			$points = get_field('points','teams_'.$team->term_id);
