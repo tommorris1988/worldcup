@@ -6,7 +6,7 @@
  */
 get_header();
 
-$the_query = new WP_Query( 'cat=1&paged=' . $paged ); 
+$the_query = new WP_Query( 'cat=1&paged=' . $paged );
 
 if ( have_posts() ) : while ( have_posts() ) : the_post();
 	$teams = get_field('teams');
@@ -23,7 +23,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 		<?php $score1 = get_field('score_1');
 		$score2 = get_field('score_2');
 		$map = get_field('venue_link');
-		if ($score1) : ?>
+		if (get_field('score_1') !== false) : ?>
 			<div class="scores">
 				<section class="left">
 					<?php echo '<span>'.$score1.'</span>'; ?>
